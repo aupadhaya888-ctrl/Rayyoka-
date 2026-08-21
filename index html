@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111111">
+  <title>RAYYOKA V1</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- APP -->
+  <div id="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="brand">
+        <div class="brand-mark">RY</div>
+        <div>
+          <h1>RAYYOKA</h1>
+          <span>V1 BUSINESS SYSTEM</span>
+        </div>
+      </div>
+
+      <nav class="navigation">
+
+        <button class="nav-item active" data-page="dashboard">
+          <span>⌂</span>
+          Dashboard
+        </button>
+
+        <button class="nav-item" data-page="sales">
+          <span>＋</span>
+          New Sale
+        </button>
+
+        <button class="nav-item" data-page="orders">
+          <span>▣</span>
+          Orders
+        </button>
+
+        <button class="nav-item" data-page="menu">
+          <span>☷</span>
+          Menu
+        </button>
+
+        <button class="nav-item" data-page="customers">
+          <span>♙</span>
+          Customers
+        </button>
+
+        <button class="nav-item" data-page="reports">
+          <span>▤</span>
+          Reports
+        </button>
+
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="system-status">
+          <span class="status-dot"></span>
+          System Online
+        </div>
+        <small>RAYYOKA FOODS</small>
+      </div>
+
+    </aside>
+
+
+    <!-- MAIN AREA -->
+    <main class="main">
+
+      <!-- TOP BAR -->
+      <header class="topbar">
+
+        <div>
+          <button class="mobile-menu" id="mobileMenu">☰</button>
+
+          <div class="page-title">
+            <span id="currentDate"></span>
+            <h2 id="pageHeading">Dashboard</h2>
+          </div>
+        </div>
+
+        <div class="top-actions">
+          <div class="clock" id="clock">00:00:00</div>
+
+          <button class="profile">
+            <span class="profile-circle">R</span>
+            <span class="profile-name">RAYYOKA</span>
+          </button>
+        </div>
+
+      </header>
+
+
+      <!-- CONTENT -->
+      <section class="content">
+
+
+        <!-- DASHBOARD PAGE -->
+        <div class="page active-page" id="dashboard">
+
+          <div class="welcome">
+            <div>
+              <span class="eyebrow">WELCOME BACK</span>
+              <h1>RAYYOKA <strong>V1</strong></h1>
+              <p>Simple. Smart. Ready for business.</p>
+            </div>
+
+            <button class="primary-btn" id="dashboardNewSale">
+              ＋ New Sale
+            </button>
+          </div>
+
+
+          <!-- STAT CARDS -->
+          <div class="stats-grid">
+
+            <div class="stat-card">
+              <div class="stat-icon">₹</div>
+              <div>
+                <span>Total Sales</span>
+                <strong id="totalSales">NPR 0</strong>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon">▣</div>
+              <div>
+                <span>Total Orders</span>
+                <strong id="totalOrders">0</strong>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon">♙</div>
+              <div>
+                <span>Customers</span>
+                <strong id="totalCustomers">0</strong>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon">●</div>
+              <div>
+                <span>Today's Sales</span>
+                <strong id="todaySales">NPR 0</strong>
+              </div>
+            </div>
+
+          </div>
+
+
+          <!-- QUICK ACTIONS -->
+          <div class="section-header">
+            <div>
+              <span class="eyebrow">QUICK ACCESS</span>
+              <h2>Business Actions</h2>
+            </div>
+          </div>
+
+          <div class="quick-grid">
+
+            <button class="quick-card" data-page-target="sales">
+              <span class="quick-icon">＋</span>
+              <strong>New Sale</strong>
+              <small>Create a new customer order</small>
+            </button>
+
+            <button class="quick-card" data-page-target="orders">
+              <span class="quick-icon">▣</span>
+              <strong>View Orders</strong>
+              <small>Check today's transactions</small>
+            </button>
+
+            <button class="quick-card" data-page-target="menu">
+              <span class="quick-icon">☷</span>
+              <strong>Manage Menu</strong>
+              <small>View RAYYOKA food items</small>
+            </button>
+
+            <button class="quick-card" data-page-target="reports">
+              <span class="quick-icon">▤</span>
+              <strong>Reports</strong>
+              <small>View business performance</small>
+            </button>
+
+          </div>
+
+
+          <!-- RECENT ORDERS -->
+          <div class="section-header recent-header">
+            <div>
+              <span class="eyebrow">ACTIVITY</span>
+              <h2>Recent Orders</h2>
+            </div>
+
+            <button class="text-btn" data-page-target="orders">
+              View All →
+            </button>
+          </div>
+
+          <div class="table-card">
+
+            <div class="empty-state" id="dashboardEmpty">
+
+              <div class="empty-icon">▣</div>
+
+              <h3>No orders yet</h3>
+
+              <p>
+                Your recent RAYYOKA orders will appear here.
+              </p>
+
+              <button class="primary-btn small" id="emptyNewSale">
+                Create First Sale
+              </button>
+
+            </div>
+
+            <div class="orders-table-wrapper" id="dashboardTableWrapper">
+
+              <table>
+                <thead>
+                  <tr>
+                    <th>Order</th>
+                    <th>Customer</th>
+                    <th>Items</th>
+                    <th>Total</th>
+                    <th>Time</th>
+                  </tr>
+                </thead>
+
+                <tbody id="dashboardOrdersTable"></tbody>
+              </table>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- NEW SALE PAGE -->
+        <div class="page" id="sales">
+
+          <div class="page-intro">
+            <span class="eyebrow">SALES</span>
+            <h1>New Sale</h1>
+            <p>Create a new RAYYOKA customer order.</p>
+          </div>
+
+          <div class="sale-layout">
+
+            <!-- MENU -->
+            <div class="sale-menu">
+
+              <div class="sale-menu-header">
+                <div>
+                  <span class="eyebrow">RAYYOKA MENU</span>
+                  <h2>Select Items</h2>
+                </div>
+
+                <input
+                  type="search"
+                  id="menuSearch"
+                  placeholder="Search food..."
+                >
+              </div>
+
+              <div class="category-buttons">
+
+                <button class="category active" data-category="all">
+                  All
+                </button>
+
+                <button class="category" data-category="momo">
+                  Momo
+                </button>
+
+                <button class="category" data-category="chawmin">
+                  Chawmin
+                </button>
+
+                <button class="category" data-category="rice">
+                  Fried Rice
+                </button>
+
+                <button class="category" data-category="noodles">
+                  Noodles
+                </button>
+
+                <button class="category" data-category="drinks">
+                  Drinks
+                </button>
+
+              </div>
+
+              <div class="food-grid" id="foodGrid"></div>
+
+            </div>
+
+
+            <!-- CART -->
+            <div class="cart-card">
+
+              <div class="cart-header">
+                <div>
+                  <span class="eyebrow">CURRENT ORDER</span>
+                  <h2>Order Cart</h2>
+                </div>
+
+                <button class="clear-btn" id="clearCart">
+                  Clear
+                </button>
+              </div>
+
+              <div class="customer-input">
+
+                <label>Customer Name</label>
+
+                <input
+                  type="text"
+                  id="customerName"
+                  placeholder="Enter customer name"
+                >
+
+              </div>
+
+              <div class="cart-items" id="cartItems">
+
+                <div class="cart-empty">
+                  <span>＋</span>
+                  <p>Add items from the menu</p>
+                </div>
+
+              </div>
+
+
+              <div class="bill">
+
+                <div>
+                  <span>Subtotal</span>
+                  <strong id="subtotal">NPR 0</strong>
+                </div>
+
+                <div>
+                  <span>Discount</span>
+                  <strong id="discount">NPR 0</strong>
+                </div>
+
+                <div class="bill-total">
+                  <span>Total</span>
+                  <strong id="cartTotal">NPR 0</strong>
+                </div>
+
+              </div>
+
+              <button class="checkout-btn" id="completeSale">
+                Complete Sale
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ORDERS PAGE -->
+        <div class="page" id="orders">
+
+          <div class="page-intro">
+            <span class="eyebrow">SALES HISTORY</span>
+            <h1>Orders</h1>
+            <p>View all RAYYOKA transactions.</p>
+          </div>
+
+          <div class="table-card">
+
+            <div class="orders-table-wrapper">
+
+              <table>
+
+                <thead>
+                  <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Items</th>
+                    <th>Total</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+
+                <tbody id="ordersTable"></tbody>
+
+              </table>
+
+            </div>
+
+            <div class="empty-state" id="ordersEmpty">
+
+              <div class="empty-icon">▣</div>
+
+              <h3>No orders found</h3>
+
+              <p>Create your first sale to see it here.</p>
+
+              <button class="primary-btn small" data-page-target="sales">
+                ＋ New Sale
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- MENU PAGE -->
+        <div class="page" id="menu">
+
+          <div class="page-intro">
+
+            <span class="eyebrow">PRODUCTS</span>
+
+            <h1>RAYYOKA Menu</h1>
+
+            <p>Your current food and beverage menu.</p>
+
+          </div>
+
+          <div class="menu-management-grid" id="menuManagementGrid"></div>
+
+        </div>
+
+
+        <!-- CUSTOMERS PAGE -->
+        <div class="page" id="customers">
+
+          <div class="page-intro">
+
+            <span class="eyebrow">CUSTOMER MANAGEMENT</span>
+
+            <h1>Customers</h1>
+
+            <p>Keep track of your RAYYOKA customers.</p>
+
+          </div>
+
+          <div class="table-card">
+
+            <div class="empty-state" id="customersEmpty">
+
+              <div class="empty-icon">♙</div>
+
+              <h3>No customers yet</h3>
+
+              <p>
+                Customers will automatically appear after sales.
+              </p>
+
+            </div>
+
+            <div class="orders-table-wrapper" id="customersTableWrapper">
+
+              <table>
+
+                <thead>
+
+                  <tr>
+                    <th>Name</th>
+                    <th>Orders</th>
+                    <th>Total Spent</th>
+                    <th>Last Order</th>
+                  </tr>
+
+                </thead>
+
+                <tbody id="customersTable"></tbody>
+
+              </table>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- REPORTS PAGE -->
+        <div class="page" id="reports">
+
+          <div class="page-intro">
+
+            <span class="eyebrow">BUSINESS ANALYTICS</span>
+
+            <h1>Reports</h1>
+
+            <p>Monitor your RAYYOKA business performance.</p>
+
+          </div>
+
+          <div class="report-grid">
+
+            <div class="report-card">
+
+              <span>Total Revenue</span>
+
+              <strong id="reportRevenue">NPR 0</strong>
+
+              <small>All recorded sales</small>
+
+            </div>
+
+            <div class="report-card">
+
+              <span>Total Orders</span>
+
+              <strong id="reportOrders">0</strong>
+
+              <small>Completed orders</small>
+
+            </div>
+
+            <div class="report-card">
+
+              <span>Average Order</span>
+
+              <strong id="reportAverage">NPR 0</strong>
+
+              <small>Revenue per order</small>
+
+            </div>
+
+            <div class="report-card">
+
+              <span>Top Item</span>
+
+              <strong id="reportTopItem">—</strong>
+
+              <small>Best selling item</small>
+
+            </div>
+
+          </div>
+
+
+          <div class="table-card report-table">
+
+            <div class="section-header">
+
+              <div>
+                <span class="eyebrow">PERFORMANCE</span>
+                <h2>Sales Summary</h2>
+              </div>
+
+            </div>
+
+            <div id="reportSummary"></div>
+
+          </div>
+
+        </div>
+
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!-- SALE SUCCESS MODAL -->
+  <div class="modal-overlay" id="successModal">
+
+    <div class="success-modal">
+
+      <div class="success-icon">✓</div>
+
+      <h2>Sale Completed!</h2>
+
+      <p id="successMessage">
+        Your RAYYOKA order has been saved.
+      </p>
+
+      <div class="success-total" id="successTotal">
+        NPR 0
+      </div>
+
+      <button class="primary-btn" id="closeSuccess">
+        Done
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- TOAST -->
+  <div class="toast" id="toast">
+    <span id="toastMessage">Done</span>
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
