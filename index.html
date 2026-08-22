@@ -20,26 +20,6 @@
 <div class="toast" id="toast"></div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="app.js"></script>
-<script>
-/* RAYYOKA category buttons: delegated handler so category taps always work on mobile/desktop. */
-document.addEventListener('click',function(e){
-  const b=e.target.closest('.cat');
-  if(!b)return;
-  e.preventDefault();
-  const value=b.getAttribute('data-cat')||'';
-  window.rayyokaSelectedCategory=value.replace(/^c/,'')||'All';
-  /* app.js owns the actual category variable; trigger its normal renderer safely. */
-  try{
-    const buttons=b.parentElement.querySelectorAll('.cat');
-    buttons.forEach(x=>x.classList.toggle('active',x===b));
-    if(b.closest('#ccats')){
-      if(typeof renderCustomerFoods==='function')renderCustomerFoods();
-    }else{
-      if(typeof renderCats==='function')renderCats();
-      if(typeof renderFoods==='function')renderFoods();
-    }
-  }catch(err){console.error('RAYYOKA category tap error:',err);}
-});
-</script>
+<script src="category-fix.js"></script>
 <script src="rayyoka-cloud.js"></script>
 </body></html>
