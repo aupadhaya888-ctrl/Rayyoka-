@@ -27,7 +27,7 @@ main{padding:22px 14px 30px}.intro{display:flex;justify-content:space-between;al
 <header class="hero"><div class="hero-inner">
 <div class="brand"><div class="logo" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><rect x="4" y="3" width="24" height="26" rx="5" stroke="#145846" stroke-width="2"/><path d="M9 9h14M10 15h3m6 0h3M10 20h3m6 0h3M10 25h3m6 0h3" stroke="#145846" stroke-width="2.2" stroke-linecap="round"/></svg></div><div><div class="eyebrow">YOUR MONEY, CLEARER</div><h1>यज्ञ हिसाब</h1></div></div>
 <p class="tagline">YagyaHisab — तपाईंको दैनिक वित्तीय हिसाब, अब सजिलो नेपालीमा। ऋण, ब्याज, SIP र प्रतिशतको हिसाब एउटै ठाउँमा।</p>
-<div class="hero-bottom"><div class="status"><span class="dot" id="statusDot"></span><span id="networkStatus">अफलाइन प्रयोगका लागि तयार</span></div><div class="hero-actions"><button id="langBtn" class="install lang-btn" type="button" aria-label="Change language">English</button><button id="installBtn" class="install" hidden>＋ मोबाइलमा इन्स्टल गर्नुहोस्</button></div></div>
+<div class="hero-bottom"><div class="status"><span class="dot" id="statusDot"></span><span id="networkStatus">अफलाइन प्रयोगका लागि तयार</span></div><div class="hero-actions"><button id="langBtn" class="install lang-btn" type="button" aria-label="Change language">English</button><button id="installBtn" class="install" type="button">＋ मोबाइलमा इन्स्टल गर्नुहोस्</button></div></div>
 </div></header>
 <main>
 <div class="intro"><div><h2>कुन हिसाब गर्ने?</h2><p>रकम भर्नुहोस् र तुरुन्त नतिजा हेर्नुहोस्।</p></div><span class="local-pill">🔒 निजी हिसाब</span></div>
@@ -142,8 +142,8 @@ $('resetPercent').onclick=()=>{$('pctA').value=100000;$('pctB').value=10;calcPer
 calcLoan();calcInterest();calcSIP();calcPercent();
 if(appLang==='en') { applyLanguage('ne'); applyLanguage('en'); }
 const installBtn=$('installBtn');let installPrompt=null;
-window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;installBtn.hidden=false});
-installBtn.addEventListener('click',async()=>{if(!installPrompt){alert(appLang==='ne'?'Chrome को मेनु (⋮) खोल्नुहोस् र “Install app” वा “Add to Home screen” छान्नुहोस्।':'Open the Chrome menu (⋮) and choose “Install app” or “Add to Home screen”.');return}installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;installBtn.hidden=true});
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;installBtn.hidden=false;installBtn.textContent=appLang==='ne'?'＋ मोबाइलमा इन्स्टल गर्नुहोस्':'＋ Install app'});
+installBtn.addEventListener('click',async()=>{if(!installPrompt){alert(appLang==='ne'?'इन्स्टल गर्न Chrome मा यो पेज खोल्नुहोस्। त्यसपछि ⋮ मेनु → “Install app” वा “Add to Home screen” छान्नुहोस्। विकल्प नदेखिए पेज एकपटक रिफ्रेस गर्नुहोस्।':'Open this page in Chrome, then tap ⋮ → “Install app” or “Add to Home screen”. If the option is missing, refresh the page once.');return}installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;installBtn.hidden=true});
 window.addEventListener('appinstalled',()=>{installBtn.hidden=true;installBtn.textContent=appLang==='ne'?'✓ इन्स्टल भयो':'✓ Installed'});
 function netStatus(){let online=navigator.onLine;$('networkStatus').textContent=online?(appLang==='ne'?'अफलाइन प्रयोगका लागि तयार':'Ready for offline use'):(appLang==='ne'?'अहिले अफलाइन — एप प्रयोग गर्न सक्नुहुन्छ':'Offline now — you can keep using the app');$('statusDot').style.background=online?'#a9e6b8':'#e8c778'}
 window.addEventListener('online',netStatus);window.addEventListener('offline',netStatus);netStatus();
