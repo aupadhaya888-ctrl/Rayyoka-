@@ -1,5 +1,5 @@
-const CACHE = "yagyahisab-v3";
-const APP_SHELL = ["./", "./index.html", "./manifest.json", "./icon.svg"];
+const CACHE = "yagyahisab-v4";
+const APP_SHELL = ["./", "./index.html", "./manifest.json", "./icon.svg", "./icon-192.svg", "./icon-512.svg"];
 
 self.addEventListener("install", event => {
   event.waitUntil(
