@@ -18,6 +18,9 @@ button,input,select{font:inherit}button{cursor:pointer}.hero{background:linear-g
 main{padding:22px 14px 30px}.intro{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:0 2px 14px}.intro h2{font-size:19px;margin:0}.intro p{font-size:12px;color:var(--muted);margin:4px 0 0}.local-pill{font-size:11px;color:var(--green);background:#e5f2e9;border:1px solid #d1e7d8;padding:7px 10px;border-radius:999px;white-space:nowrap}
 .tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:13px}.tab{border:1px solid var(--line);background:#ffffffc9;color:#52665c;border-radius:13px;padding:13px 6px;font-size:13px;font-weight:750;transition:all .15s}.tab .tab-icon{display:block;font-size:18px;margin-bottom:5px}.tab.active{background:var(--deep);border-color:var(--deep);color:#fff;box-shadow:0 7px 17px #103c3225}
 .panel{display:none}.panel.active{display:block}.card{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:clamp(17px,3.5vw,25px);box-shadow:var(--shadow)}.card-head{display:flex;align-items:start;gap:12px;margin-bottom:20px}.head-icon{width:44px;height:44px;border-radius:14px;background:var(--soft);color:var(--green);display:grid;place-items:center;font-size:22px;flex:none}.card h3{font-size:20px;margin:0 0 4px;letter-spacing:-.3px}.hint{color:var(--muted);font-size:13px;line-height:1.6;margin:0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.field label{display:block;font-size:12px;color:#52665c;font-weight:800;margin:0 0 7px}.field input,.field select{width:100%;min-width:0;border:1px solid #d7e1da;border-radius:12px;padding:13px 12px;background:#fbfdfb;color:var(--ink);outline:none;transition:border .15s,box-shadow .15s}.field input:focus,.field select:focus{border-color:#39836b;box-shadow:0 0 0 3px #39836b18}.field input:invalid{border-color:#d97777}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:19px}.btn{border:1px solid var(--line);background:#f6f8f6;color:#3d554a;border-radius:12px;padding:12px 15px;font-size:13px;font-weight:800}.btn.primary{background:var(--green);border-color:var(--green);color:#fff;flex:1;min-width:155px}.btn:active,.tab:active{transform:translateY(1px)}.result{margin-top:20px;border:1px solid #d4e8d9;border-radius:16px;background:linear-gradient(145deg,#f0f8f1,#e7f3ea);padding:17px;min-height:110px}.result-label{font-size:12px;color:#567263;font-weight:750}.big{font-size:clamp(25px,5vw,34px);font-weight:900;letter-spacing:-.6px;color:#145846;margin:4px 0 13px;overflow-wrap:anywhere}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.stat{background:#ffffffb8;border:1px solid #dcebe0;border-radius:12px;padding:11px;min-width:0}.stat span{display:block;color:#718079;font-size:11px;line-height:1.5}.stat strong{display:block;margin-top:5px;color:#203e32;font-size:13px;overflow-wrap:anywhere}.note{font-size:12px;color:var(--muted);line-height:1.75;margin:16px 1px 0}.notice{margin:14px 0 0;padding:12px 14px;border-radius:12px;background:#f8f4e8;border:1px solid #efe3c0;color:#75602b;font-size:12px;line-height:1.6}footer{padding:0 16px 28px;text-align:center;color:var(--muted);font-size:11px;line-height:1.8}.footer-brand{color:var(--green);font-weight:850;letter-spacing:.3px}
+
+.auth-gate{max-width:520px;margin:24px auto 32px;padding:0 14px}.auth-card{background:#fff;border:1px solid #dce6de;border-radius:22px;padding:clamp(20px,5vw,30px);box-shadow:0 14px 40px #123d2d0c}.auth-brand{font-size:11px;letter-spacing:1.8px;color:#a27b27;font-weight:850}.auth-card h2{font-size:25px;margin:6px 0 5px;color:#103c32}.auth-sub{font-size:13px;line-height:1.65;color:#718079;margin:0 0 20px}.auth-switch{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:18px}.auth-switch button{border:1px solid #dce6de;border-radius:11px;padding:11px 8px;background:#f5f8f5;color:#476256;font-weight:800}.auth-switch button.active{background:#103c32;border-color:#103c32;color:#fff}.auth-field{margin-bottom:13px}.auth-field label{display:block;font-size:12px;color:#52665c;font-weight:800;margin-bottom:7px}.auth-field input{width:100%;border:1px solid #d7e1da;border-radius:12px;padding:13px 12px;background:#fbfdfb;color:#152b25;font:inherit;outline:none}.auth-field input:focus{border-color:#39836b;box-shadow:0 0 0 3px #39836b18}.auth-submit{width:100%;border:0;border-radius:12px;background:#145846;color:#fff;padding:14px;font-weight:850;margin-top:5px}.auth-link{border:0;background:none;color:#145846;text-decoration:underline;padding:12px 0 0;font-size:13px;font-weight:700}.auth-message{display:none;margin:13px 0 0;padding:11px 12px;border-radius:11px;font-size:13px;line-height:1.55;overflow-wrap:anywhere}.auth-message.show{display:block}.auth-message.error{background:#fff0ee;border:1px solid #f0c9c3;color:#8b3026}.auth-message.success{background:#edf8ef;border:1px solid #cde7d1;color:#215e35}.auth-small{font-size:11px;color:#718079;line-height:1.65;margin:15px 0 0}.account-btn{border:1px solid #ffffff66;background:#ffffff16;color:white;border-radius:12px;padding:10px 12px;font-weight:800;font-size:12px}.account-btn[hidden]{display:none}
+
 @media(min-width:700px){.hero{padding:32px 24px 35px}main{padding-top:27px}.tabs{gap:10px}.tab{padding:15px}.hero-bottom{margin-top:21px}}
 @media(max-width:520px){.tabs{gap:6px}.tab{font-size:12px;padding:11px 3px;border-radius:11px}.tab .tab-icon{font-size:17px}.grid{grid-template-columns:1fr;gap:13px}.stats{grid-template-columns:1fr}.stat{display:flex;justify-content:space-between;align-items:center;gap:12px}.stat strong{text-align:right;margin:0}.intro{align-items:start;flex-direction:column}.card{border-radius:17px}.hero{padding-top:21px}.logo{width:46px;height:46px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
@@ -27,9 +30,38 @@ main{padding:22px 14px 30px}.intro{display:flex;justify-content:space-between;al
 <header class="hero"><div class="hero-inner">
 <div class="brand"><div class="logo" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><rect x="4" y="3" width="24" height="26" rx="5" stroke="#145846" stroke-width="2"/><path d="M9 9h14M10 15h3m6 0h3M10 20h3m6 0h3M10 25h3m6 0h3" stroke="#145846" stroke-width="2.2" stroke-linecap="round"/></svg></div><div><div class="eyebrow">YOUR MONEY, CLEARER</div><h1>यज्ञ हिसाब</h1></div></div>
 <p class="tagline">YagyaHisab — तपाईंको दैनिक वित्तीय हिसाब, अब सजिलो नेपालीमा। ऋण, ब्याज, SIP र प्रतिशतको हिसाब एउटै ठाउँमा।</p>
-<div class="hero-bottom"><div class="status"><span class="dot" id="statusDot"></span><span id="networkStatus">अफलाइन प्रयोगका लागि तयार</span></div><div class="hero-actions"><button id="langBtn" class="install lang-btn" type="button" aria-label="Change language">English</button><button id="installBtn" class="install" type="button">＋ मोबाइलमा इन्स्टल गर्नुहोस्</button></div></div>
+<div class="hero-bottom"><div class="status"><span class="dot" id="statusDot"></span><span id="networkStatus">अफलाइन प्रयोगका लागि तयार</span></div><div class="hero-actions"><button id="langBtn" class="install lang-btn" type="button" aria-label="Change language">English</button><button id="installBtn" class="install" type="button">＋ मोबाइलमा इन्स्टल गर्नुहोस्</button><button id="signOutBtn" class="account-btn" type="button" hidden>लगआउट / Sign out</button></div></div>
 </div></header>
-<main>
+
+<section id="authGate" class="auth-gate">
+  <div class="auth-card">
+    <div class="auth-brand">YAGYAHISAB · PERSONAL FINANCE</div>
+    <h2>यज्ञ हिसाबमा स्वागत छ</h2>
+    <p class="auth-sub">Sign in before using your calculators. Create your account once, then log in whenever you return.</p>
+    <div class="auth-switch"><button id="showLogin" type="button" class="active">लगइन / Log in</button><button id="showSignup" type="button">खाता खोल्नुहोस् / Sign up</button></div>
+    <form id="loginForm">
+      <div class="auth-field"><label for="loginEmail">इमेल / Email</label><input id="loginEmail" type="email" autocomplete="username" required placeholder="you@example.com"></div>
+      <div class="auth-field"><label for="loginPassword">पासवर्ड / Password</label><input id="loginPassword" type="password" autocomplete="current-password" required minlength="6" placeholder="Your password"></div>
+      <button class="auth-submit" type="submit">लगइन गरेर खोल्नुहोस् / Log in</button>
+      <button id="forgotPassword" class="auth-link" type="button">पासवर्ड बिर्सनुभयो? / Forgot password?</button>
+    </form>
+    <form id="signupForm" hidden>
+      <div class="auth-field"><label for="signupEmail">इमेल / Email</label><input id="signupEmail" type="email" autocomplete="email" required placeholder="you@example.com"></div>
+      <div class="auth-field"><label for="signupPassword">पासवर्ड / Password (कम्तीमा ६ अक्षर)</label><input id="signupPassword" type="password" autocomplete="new-password" required minlength="6" placeholder="Create a password"></div>
+      <div class="auth-field"><label for="signupPassword2">पासवर्ड फेरि लेख्नुहोस् / Confirm password</label><input id="signupPassword2" type="password" autocomplete="new-password" required minlength="6" placeholder="Repeat password"></div>
+      <button class="auth-submit" type="submit">खाता बनाउनुहोस् / Create account</button>
+    </form>
+    <form id="resetForm" hidden>
+      <div class="auth-field"><label for="resetEmail">इमेल / Email</label><input id="resetEmail" type="email" autocomplete="email" required placeholder="you@example.com"></div>
+      <button class="auth-submit" type="submit">रिसेट लिंक पठाउनुहोस् / Send reset link</button>
+      <button id="backToLogin" class="auth-link" type="button">लगइनमा फर्कनुहोस् / Back to login</button>
+    </form>
+    <div id="authMessage" class="auth-message" role="status" aria-live="polite"></div>
+    <p class="auth-small">Your calculators run on this device. Keep your password private. For your first sign-in, an internet connection is required; the app can retain your last signed-in session for offline use on this device.</p>
+  </div>
+</section>
+
+<main id="appMain" hidden>
 <div class="intro"><div><h2>कुन हिसाब गर्ने?</h2><p>रकम भर्नुहोस् र तुरुन्त नतिजा हेर्नुहोस्।</p></div><span class="local-pill">🔒 निजी हिसाब</span></div>
 <nav class="tabs" aria-label="हिसाबका प्रकार">
 <button class="tab active" data-tab="loan" aria-selected="true"><span class="tab-icon">🏦</span>ऋण / किस्ता</button>
@@ -54,7 +86,7 @@ main{padding:22px 14px 30px}.intro{display:flex;justify-content:space-between;al
 <div class="grid"><div class="field"><label for="pctA">आधार रकम (A)</label><input id="pctA" type="number" value="100000" inputmode="decimal"></div><div class="field"><label for="pctB">प्रतिशत (%) वा तुलना रकम (B)</label><input id="pctB" type="number" value="10" inputmode="decimal"></div></div>
 <div class="actions"><button class="btn primary" id="calcPercent">प्रतिशत हिसाब गर्नुहोस् ↗</button><button class="btn" id="resetPercent">रिसेट</button></div><div id="percentResult" class="result" aria-live="polite"></div><p class="note">पहिलो नतिजा A को B प्रतिशत रकम हो। अर्को नतिजाले B लाई A सँग तुलना गर्छ।</p></section>
 </main>
-<footer><div class="footer-brand">YagyaHisab · यज्ञ हिसाब</div>सबै हिसाब तपाईंको डिभाइसमा गरिन्छ। तपाईंको रकम कुनै सर्भरमा पठाइँदैन।<br>अफलाइन प्रयोगका लागि एकपटक इन्टरनेटमा खोल्नुहोस्। वित्तीय निर्णय गर्नुअघि नतिजा पुनः जाँच गर्नुहोस्।</footer>
+<footer id="appFooter" hidden><div class="footer-brand">YagyaHisab · यज्ञ हिसाब</div>सबै हिसाब तपाईंको डिभाइसमा गरिन्छ। तपाईंको रकम कुनै सर्भरमा पठाइँदैन।<br>अफलाइन प्रयोगका लागि एकपटक इन्टरनेटमा खोल्नुहोस्। वित्तीय निर्णय गर्नुअघि नतिजा पुनः जाँच गर्नुहोस्।</footer>
 <script>
 "use strict";
 let appLang = 'ne';
@@ -151,5 +183,131 @@ window.addEventListener('appinstalled',()=>{installBtn.hidden=true;installBtn.te
 function netStatus(){let online=navigator.onLine;$('networkStatus').textContent=online?(appLang==='ne'?'अफलाइन प्रयोगका लागि तयार':'Ready for offline use'):(appLang==='ne'?'अहिले अफलाइन — एप प्रयोग गर्न सक्नुहुन्छ':'Offline now — you can keep using the app');$('statusDot').style.background=online?'#a9e6b8':'#e8c778'}
 window.addEventListener('online',netStatus);window.addEventListener('offline',netStatus);netStatus();
 if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').then(()=>navigator.serviceWorker.ready).then(()=>{$('networkStatus').textContent=navigator.onLine?(appLang==='ne'?'अफलाइन सुविधा तयार':'Offline support ready'):(appLang==='ne'?'अफलाइन मोड':'Offline mode');}).catch(()=>{$('networkStatus').textContent=appLang==='ne'?'अफलाइन सुविधा सेटअप हुन सकेन':'Could not set up offline support'}));
+
+/* YagyaHisab sign-in gate: Supabase Auth REST API. The publishable key is designed for public clients. */
+(() => {
+  const AUTH_URL = "https://wmlgqqfnhdqlssavnklo.supabase.co";
+  const AUTH_KEY = "sb_publishable_qX_cC2cjeGqvTG5bhoyGsg_LqN_dr1b";
+  const SESSION_KEY = "yagyahisab-auth-session-v1";
+  const gate = document.getElementById("authGate");
+  const appMain = document.getElementById("appMain");
+  const appFooter = document.getElementById("appFooter");
+  const signOutBtn = document.getElementById("signOutBtn");
+  const msg = document.getElementById("authMessage");
+  const $a = id => document.getElementById(id);
+  let session = null;
+  let busy = false;
+  const redirectUrl = location.origin + location.pathname;
+
+  function message(text, kind="success") {
+    msg.textContent = text;
+    msg.className = "auth-message show " + kind;
+  }
+  function clearMessage() { msg.textContent=""; msg.className="auth-message"; }
+  function mode(name) {
+    clearMessage();
+    $a("loginForm").hidden = name !== "login";
+    $a("signupForm").hidden = name !== "signup";
+    $a("resetForm").hidden = name !== "reset";
+    $a("showLogin").classList.toggle("active",name==="login");
+    $a("showSignup").classList.toggle("active",name==="signup");
+  }
+  function setBusy(on) {
+    busy=on;
+    document.querySelectorAll("#authGate button[type=submit]").forEach(b=>{b.disabled=on;b.style.opacity=on?".65":"1"});
+  }
+  function showApp(user) {
+    gate.hidden = true;
+    appMain.hidden = false;
+    appFooter.hidden = false;
+    signOutBtn.hidden = false;
+    signOutBtn.textContent = (appLang==="ne"?"लगआउट":"Sign out") + (user?.email ? " · "+user.email : "");
+  }
+  function showGate() {
+    gate.hidden = false;
+    appMain.hidden = true;
+    appFooter.hidden = true;
+    signOutBtn.hidden = true;
+  }
+  function saveSession(data) {
+    session = {...data, expires_at: data.expires_at || (Math.floor(Date.now()/1000)+(data.expires_in||3600))};
+    try { localStorage.setItem(SESSION_KEY, JSON.stringify(session)); } catch(e) {}
+    showApp(session.user);
+  }
+  function readSession() {
+    try { const raw=localStorage.getItem(SESSION_KEY); return raw ? JSON.parse(raw) : null; } catch(e) { return null; }
+  }
+  async function authRequest(path, body, token) {
+    const headers={"apikey":AUTH_KEY,"Content-Type":"application/json"};
+    if(token) headers.Authorization="Bearer "+token;
+    const res=await fetch(AUTH_URL+path,{method:"POST",headers,body:JSON.stringify(body)});
+    const data=await res.json().catch(()=>({}));
+    if(!res.ok) throw new Error(data.msg||data.message||data.error_description||data.error||"Request failed. Please try again.");
+    return data;
+  }
+  async function restore() {
+    const old=readSession();
+    if(!old || !old.access_token || !old.user) { showGate(); return; }
+    session=old;
+    if(!navigator.onLine) { showApp(old.user); return; }
+    try {
+      if((old.expires_at||0) > Math.floor(Date.now()/1000)+60) {
+        const res=await fetch(AUTH_URL+"/auth/v1/user",{headers:{"apikey":AUTH_KEY,"Authorization":"Bearer "+old.access_token}});
+        if(res.ok) { showApp(old.user); return; }
+      }
+      if(old.refresh_token) {
+        const fresh=await authRequest("/auth/v1/token?grant_type=refresh_token",{refresh_token:old.refresh_token});
+        saveSession(fresh); return;
+      }
+    } catch(e) {
+      if(!navigator.onLine) { showApp(old.user); return; }
+    }
+    try { localStorage.removeItem(SESSION_KEY); } catch(e) {}
+    session=null; showGate();
+  }
+  $a("showLogin").addEventListener("click",()=>mode("login"));
+  $a("showSignup").addEventListener("click",()=>mode("signup"));
+  $a("forgotPassword").addEventListener("click",()=>mode("reset"));
+  $a("backToLogin").addEventListener("click",()=>mode("login"));
+
+  $a("loginForm").addEventListener("submit",async e=>{
+    e.preventDefault(); if(busy)return; clearMessage(); setBusy(true);
+    try {
+      const data=await authRequest("/auth/v1/token?grant_type=password",{email:$a("loginEmail").value.trim(),password:$a("loginPassword").value});
+      saveSession(data);
+    } catch(err) { message(err.message==="Invalid login credentials"?"Email or password is incorrect. / इमेल वा पासवर्ड मिलेन।":err.message,"error"); }
+    finally { setBusy(false); }
+  });
+  $a("signupForm").addEventListener("submit",async e=>{
+    e.preventDefault(); if(busy)return; clearMessage();
+    if($a("signupPassword").value!==$a("signupPassword2").value){message("Passwords do not match. / दुवै पासवर्ड मिलेनन्।","error");return;}
+    setBusy(true);
+    try {
+      const data=await authRequest("/auth/v1/signup",{email:$a("signupEmail").value.trim(),password:$a("signupPassword").value, options:{emailRedirectTo:redirectUrl}});
+      if(data.access_token) { saveSession(data); message("Account created. You are signed in. / खाता बन्यो र लगइन भयो।"); }
+      else { mode("login"); message("Account created. Check your email to confirm it, then log in. / खाता बन्यो। इमेलमा आएको पुष्टि लिंक खोल्नुहोस्, त्यसपछि लगइन गर्नुहोस्।"); }
+    } catch(err) { message(err.message,"error"); }
+    finally { setBusy(false); }
+  });
+  $a("resetForm").addEventListener("submit",async e=>{
+    e.preventDefault(); if(busy)return; clearMessage();setBusy(true);
+    try {
+      await authRequest("/auth/v1/recover?redirect_to="+encodeURIComponent(redirectUrl),{email:$a("resetEmail").value.trim()});
+      message("If that email has an account, a password-reset link has been sent. / खाता भएमा पासवर्ड रिसेट लिंक इमेलमा पठाइएको छ।");
+    } catch(err) { message(err.message,"error"); }
+    finally { setBusy(false); }
+  });
+  signOutBtn.addEventListener("click",async()=>{
+    const old=session||readSession();
+    if(old?.access_token && navigator.onLine) {
+      try { await fetch(AUTH_URL+"/auth/v1/logout",{method:"POST",headers:{"apikey":AUTH_KEY,"Authorization":"Bearer "+old.access_token}}); } catch(e) {}
+    }
+    try { localStorage.removeItem(SESSION_KEY); } catch(e) {}
+    session=null; showGate(); mode("login"); message("You have signed out. / तपाईं लगआउट हुनुभयो।");
+    window.scrollTo({top:0,behavior:"smooth"});
+  });
+  restore();
+})();
+
 </script>
 </body></html>
