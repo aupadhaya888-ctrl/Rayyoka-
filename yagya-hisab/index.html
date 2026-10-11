@@ -493,7 +493,7 @@ if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.ser
     const result = params.get("payment");
     const data = params.get("data");
     if (result === "failed") { message("Payment was cancelled or failed. No Premium access was activated."); history.replaceState(null,"",location.pathname); return; }
-    if (result === "success" && data) {
+    if (data) {
       message("Checking the payment with eSewa…");
       try {
         const verified = await callBilling("verify-payment", { response_data: data });
@@ -588,7 +588,7 @@ if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.ser
     $p("compareResult").textContent="Option A EMI: "+fmt(ea)+" · total interest: "+fmt(ea*months-a)+". Option B EMI: "+fmt(eb)+" · total interest: "+fmt(eb*months-b)+". Monthly difference: "+fmt(Math.abs(ea-eb))+".";
   });
   const params = new URLSearchParams(location.search);
-  if(params.get("payment")==="success" || params.get("payment")==="failed") {
+  if(params.has("data") || params.get("payment")==="success" || params.get("payment")==="failed") {
     setTimeout(()=>{ if(session()?.access_token) handlePaymentReturn(); },300);
   } else {
     const s=session();
