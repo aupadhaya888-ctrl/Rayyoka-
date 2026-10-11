@@ -14,7 +14,7 @@
 <style>
 :root{color-scheme:light;--bg:#f4f6f3;--paper:#fff;--ink:#152b25;--muted:#718079;--green:#145846;--deep:#103c32;--gold:#e8c778;--line:#e1e8e3;--soft:#eaf4ee;--shadow:0 14px 40px #123d2d0c}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 85% 0%,#e6efe6 0,transparent 32rem),var(--bg);font-family:system-ui,-apple-system,"Noto Sans Devanagari",sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
-button,input,select{font:inherit}button{cursor:pointer}.hero{background:linear-gradient(125deg,#0c2e27,#145846 70%,#1e7058);color:#fff;padding:25px 17px 30px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:230px;height:230px;border:1px solid #ffffff20;border-radius:50%;right:-80px;top:-105px;box-shadow:0 0 0 28px #ffffff08,0 0 0 58px #ffffff06;pointer-events:none}.hero-inner,main,footer{max-width:980px;margin:auto;position:relative}.brand{display:flex;align-items:center;gap:12px}.logo{width:50px;height:50px;border-radius:16px;background:#fff;display:grid;place-items:center;color:var(--deep);box-shadow:0 5px 16px #0002;flex:none}.logo svg{width:31px;height:31px}.eyebrow{font-size:11px;letter-spacing:2px;color:var(--gold);font-weight:800}.brand h1{font-size:clamp(25px,5vw,36px);margin:1px 0 0;letter-spacing:-.7px}.tagline{color:#d9e9df;margin:17px 0 0;font-size:14px;line-height:1.7;max-width:620px}.hero-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:19px;flex-wrap:wrap}.status{font-size:12px;color:#d9e9df;display:flex;align-items:center;gap:7px}.dot{width:8px;height:8px;background:#a9e6b8;border-radius:50%;box-shadow:0 0 0 4px #a9e6b820}.install{border:1px solid #e8c77880;background:var(--gold);color:#183c30;border-radius:12px;padding:10px 14px;font-weight:800;font-size:13px;box-shadow:0 5px 14px #0002}.install[hidden]{display:none}
+button,input,select{font:inherit}button{cursor:pointer}.hero{background:linear-gradient(125deg,#0c2e27,#145846 70%,#1e7058);color:#fff;padding:25px 17px 30px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:230px;height:230px;border:1px solid #ffffff20;border-radius:50%;right:-80px;top:-105px;box-shadow:0 0 0 28px #ffffff08,0 0 0 58px #ffffff06;pointer-events:none}.hero-inner,main,footer{max-width:980px;margin:auto;position:relative}.brand{display:flex;align-items:center;gap:12px}.logo{width:50px;height:50px;border-radius:16px;background:#fff;display:grid;place-items:center;color:var(--deep);box-shadow:0 5px 16px #0002;flex:none}.logo svg{width:31px;height:31px}.eyebrow{font-size:11px;letter-spacing:2px;color:var(--gold);font-weight:800}.brand h1{font-size:clamp(25px,5vw,36px);margin:1px 0 0;letter-spacing:-.7px}.tagline{color:#d9e9df;margin:17px 0 0;font-size:14px;line-height:1.7;max-width:620px}.hero-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:19px;flex-wrap:wrap}.status{font-size:12px;color:#d9e9df;display:flex;align-items:center;gap:7px}.dot{width:8px;height:8px;background:#a9e6b8;border-radius:50%;box-shadow:0 0 0 4px #a9e6b820}.install{border:1px solid #e8c77880;background:var(--gold);color:#183c30;border-radius:12px;padding:10px 14px;font-weight:800;font-size:13px;box-shadow:0 5px 14px #0002}.install[hidden]{display:none}.hero-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.lang-btn{background:#ffffff16;color:#fff;border-color:#ffffff66;box-shadow:none}
 main{padding:22px 14px 30px}.intro{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:0 2px 14px}.intro h2{font-size:19px;margin:0}.intro p{font-size:12px;color:var(--muted);margin:4px 0 0}.local-pill{font-size:11px;color:var(--green);background:#e5f2e9;border:1px solid #d1e7d8;padding:7px 10px;border-radius:999px;white-space:nowrap}
 .tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:13px}.tab{border:1px solid var(--line);background:#ffffffc9;color:#52665c;border-radius:13px;padding:13px 6px;font-size:13px;font-weight:750;transition:all .15s}.tab .tab-icon{display:block;font-size:18px;margin-bottom:5px}.tab.active{background:var(--deep);border-color:var(--deep);color:#fff;box-shadow:0 7px 17px #103c3225}
 .panel{display:none}.panel.active{display:block}.card{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:clamp(17px,3.5vw,25px);box-shadow:var(--shadow)}.card-head{display:flex;align-items:start;gap:12px;margin-bottom:20px}.head-icon{width:44px;height:44px;border-radius:14px;background:var(--soft);color:var(--green);display:grid;place-items:center;font-size:22px;flex:none}.card h3{font-size:20px;margin:0 0 4px;letter-spacing:-.3px}.hint{color:var(--muted);font-size:13px;line-height:1.6;margin:0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.field label{display:block;font-size:12px;color:#52665c;font-weight:800;margin:0 0 7px}.field input,.field select{width:100%;min-width:0;border:1px solid #d7e1da;border-radius:12px;padding:13px 12px;background:#fbfdfb;color:var(--ink);outline:none;transition:border .15s,box-shadow .15s}.field input:focus,.field select:focus{border-color:#39836b;box-shadow:0 0 0 3px #39836b18}.field input:invalid{border-color:#d97777}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:19px}.btn{border:1px solid var(--line);background:#f6f8f6;color:#3d554a;border-radius:12px;padding:12px 15px;font-size:13px;font-weight:800}.btn.primary{background:var(--green);border-color:var(--green);color:#fff;flex:1;min-width:155px}.btn:active,.tab:active{transform:translateY(1px)}.result{margin-top:20px;border:1px solid #d4e8d9;border-radius:16px;background:linear-gradient(145deg,#f0f8f1,#e7f3ea);padding:17px;min-height:110px}.result-label{font-size:12px;color:#567263;font-weight:750}.big{font-size:clamp(25px,5vw,34px);font-weight:900;letter-spacing:-.6px;color:#145846;margin:4px 0 13px;overflow-wrap:anywhere}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.stat{background:#ffffffb8;border:1px solid #dcebe0;border-radius:12px;padding:11px;min-width:0}.stat span{display:block;color:#718079;font-size:11px;line-height:1.5}.stat strong{display:block;margin-top:5px;color:#203e32;font-size:13px;overflow-wrap:anywhere}.note{font-size:12px;color:var(--muted);line-height:1.75;margin:16px 1px 0}.notice{margin:14px 0 0;padding:12px 14px;border-radius:12px;background:#f8f4e8;border:1px solid #efe3c0;color:#75602b;font-size:12px;line-height:1.6}footer{padding:0 16px 28px;text-align:center;color:var(--muted);font-size:11px;line-height:1.8}.footer-brand{color:var(--green);font-weight:850;letter-spacing:.3px}
@@ -27,7 +27,7 @@ main{padding:22px 14px 30px}.intro{display:flex;justify-content:space-between;al
 <header class="hero"><div class="hero-inner">
 <div class="brand"><div class="logo" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><rect x="4" y="3" width="24" height="26" rx="5" stroke="#145846" stroke-width="2"/><path d="M9 9h14M10 15h3m6 0h3M10 20h3m6 0h3M10 25h3m6 0h3" stroke="#145846" stroke-width="2.2" stroke-linecap="round"/></svg></div><div><div class="eyebrow">YOUR MONEY, CLEARER</div><h1>यज्ञ हिसाब</h1></div></div>
 <p class="tagline">YagyaHisab — तपाईंको दैनिक वित्तीय हिसाब, अब सजिलो नेपालीमा। ऋण, ब्याज, SIP र प्रतिशतको हिसाब एउटै ठाउँमा।</p>
-<div class="hero-bottom"><div class="status"><span class="dot" id="statusDot"></span><span id="networkStatus">अफलाइन प्रयोगका लागि तयार</span></div><button id="installBtn" class="install" hidden>＋ मोबाइलमा इन्स्टल गर्नुहोस्</button></div>
+<div class="hero-bottom"><div class="status"><span class="dot" id="statusDot"></span><span id="networkStatus">अफलाइन प्रयोगका लागि तयार</span></div><div class="hero-actions"><button id="langBtn" class="install lang-btn" type="button" aria-label="Change language">English</button><button id="installBtn" class="install" hidden>＋ मोबाइलमा इन्स्टल गर्नुहोस्</button></div></div>
 </div></header>
 <main>
 <div class="intro"><div><h2>कुन हिसाब गर्ने?</h2><p>रकम भर्नुहोस् र तुरुन्त नतिजा हेर्नुहोस्।</p></div><span class="local-pill">🔒 निजी हिसाब</span></div>
@@ -57,9 +57,76 @@ main{padding:22px 14px 30px}.intro{display:flex;justify-content:space-between;al
 <footer><div class="footer-brand">YagyaHisab · यज्ञ हिसाब</div>सबै हिसाब तपाईंको डिभाइसमा गरिन्छ। तपाईंको रकम कुनै सर्भरमा पठाइँदैन।<br>अफलाइन प्रयोगका लागि एकपटक इन्टरनेटमा खोल्नुहोस्। वित्तीय निर्णय गर्नुअघि नतिजा पुनः जाँच गर्नुहोस्।</footer>
 <script>
 "use strict";
+let appLang = 'ne';
+const translations = {
+'YOUR MONEY, CLEARER':'तपाईंको पैसाको स्पष्ट हिसाब',
+'यज्ञ हिसाब':'यज्ञ हिसाब',
+'YagyaHisab — तपाईंको दैनिक वित्तीय हिसाब, अब सजिलो नेपालीमा। ऋण, ब्याज, SIP र प्रतिशतको हिसाब एउटै ठाउँमा.':'YagyaHisab — your everyday money calculations, made simple. Loans, interest, SIP and percentages in one place.',
+'अफलाइन प्रयोगका लागि तयार':'Ready for offline use',
+'＋ मोबाइलमा इन्स्टल गर्नुहोस्':'＋ Install on phone',
+'कुन हिसाब गर्ने?':'What would you like to calculate?',
+'रकम भर्नुहोस् र तुरुन्त नतिजा हेर्नुहोस्।':'Enter your numbers and see the result instantly.',
+'🔒 निजी हिसाब':'🔒 Private calculations',
+'ऋण / किस्ता':'Loan / EMI','ब्याज':'Interest','SIP लगानी':'SIP investment','प्रतिशत':'Percentage',
+'ऋण तथा मासिक किस्ता':'Loan and monthly instalment',
+'EMI — प्रत्येक महिना तिर्नुपर्ने अनुमानित रकम।':'EMI — the estimated amount payable each month.',
+'ऋण रकम (रु.)':'Loan amount (NPR)','वार्षिक ब्याजदर (%)':'Annual interest rate (%)','ऋण अवधि (वर्ष)':'Loan term (years)','थप शुल्क (रु., ऐच्छिक)':'Additional fees (NPR, optional)',
+'किस्ता हिसाब गर्नुहोस् ↗':'Calculate EMI ↗','रिसेट':'Reset',
+'बैंकको वास्तविक EMI मा शुल्क, बीमा, ब्याज गणना विधि र अन्य नियमले फरक पार्न सक्छ। यो अनुमान हो.':'Actual bank EMI may vary due to fees, insurance, calculation methods and other terms. This is an estimate.',
+'साधारण तथा चक्रवृद्धि ब्याज':'Simple and compound interest',
+'समयसँगै तपाईंको रकम कति हुन सक्छ तुलना गर्नुहोस्।':'Compare how your money may grow over time.',
+'मूलधन (रु.)':'Principal (NPR)','अवधि (वर्ष)':'Term (years)','चक्रवृद्धि हुने आवृत्ति':'Compounding frequency',
+'वार्षिक':'Annually','अर्धवार्षिक':'Semi-annually','त्रैमासिक':'Quarterly','मासिक':'Monthly','दैनिक (अनुमानित)':'Daily (approx.)',
+'ब्याज हिसाब गर्नुहोस् ↗':'Calculate interest ↗',
+'कर, सेवा शुल्क र मुद्रास्फीति समावेश गरिएको छैन। संस्थाको वास्तविक नियम जाँच गर्नुहोस्।':'Taxes, service charges and inflation are not included. Check the institution’s actual terms.',
+'SIP तथा मासिक लगानी':'SIP and monthly investment',
+'नियमित लगानीको सम्भावित भविष्य मूल्य अनुमान गर्नुहोस्।':'Estimate the possible future value of regular investments.',
+'मासिक लगानी (रु.)':'Monthly investment (NPR)','अनुमानित वार्षिक प्रतिफल (%)':'Estimated annual return (%)','लगानी अवधि (वर्ष)':'Investment period (years)','सुरुको एकमुष्ट रकम (रु.)':'Initial lump sum (NPR)',
+'SIP हिसाब गर्नुहोस् ↗':'Calculate SIP ↗',
+'लगानीको प्रतिफल निश्चित हुँदैन। बजारमा लगानी गर्दा रकम घट्न पनि सक्छ; यो ग्यारेन्टी वा लगानी सल्लाह होइन.':'Investment returns are not guaranteed. Market investments can lose value; this is not a guarantee or investment advice.',
+'प्रतिशत हिसाब':'Percentage calculator',
+'प्रतिशत निकाल्नुहोस् वा रकममा कति वृद्धि/कमी हुन्छ हेर्नुहोस्।':'Calculate a percentage or see the increase/decrease in an amount.',
+'आधार रकम (A)':'Base amount (A)','प्रतिशत (%) वा तुलना रकम (B)':'Percentage (%) or comparison amount (B)',
+'प्रतिशत हिसाब गर्नुहोस् ↗':'Calculate percentage ↗',
+'पहिलो नतिजा A को B प्रतिशत रकम हो। अर्को नतिजाले B लाई A सँग तुलना गर्छ.':'The first result is B percent of A. Another result compares B with A.',
+'सबै हिसाब तपाईंको डिभाइसमा गरिन्छ। तपाईंको रकम कुनै सर्भरमा पठाइँदैन.':'All calculations happen on your device. Your amounts are not sent to a server.',
+'अफलाइन प्रयोगका लागि एकपटक इन्टरनेटमा खोल्नुहोस्। वित्तीय निर्णय गर्नुअघि नतिजा पुनः जाँच गर्नुहोस्.':'Open once while connected to the internet for offline use. Double-check results before making financial decisions.',
+'अनुमानित मासिक किस्ता':'Estimated monthly EMI','कुल किस्ता भुक्तानी':'Total EMI payments','कुल ब्याज':'Total interest','शुल्कसहित अनुमानित लागत':'Estimated cost including fees',
+'साधारण ब्याज':'Simple interest','साधारण ब्याजसहित कुल':'Total with simple interest','चक्रवृद्धि ब्याज':'Compound interest','चक्रवृद्धिसहित कुल':'Total with compound interest',
+'अनुमानित भविष्य मूल्य':'Estimated future value','कुल लगानी':'Total invested','अनुमानित वृद्धि':'Estimated growth',
+'B भनेको A को':'B as a percentage of A','A को B% रकम':'B% of A','A + B% रकम':'A plus B%','A देखि B रकमको परिवर्तन':'Change from A to B',
+'कृपया जाँच गर्नुहोस्':'Please check your inputs',
+'ऋण रकम र अवधि शून्यभन्दा बढी राख्नुहोस्।':'Loan amount and term must be greater than zero.',
+'ब्याज आवृत्ति छान्नुहोस्।':'Choose a compounding frequency.',
+'शून्यभन्दा बढी लगानी अवधि राख्नुहोस्।':'Investment period must be greater than zero.',
+'हिसाब सम्भव छैन':'Cannot calculate'
+};
+const neToEn = translations;
+const enToNe = Object.fromEntries(Object.entries(translations).map(([ne,en])=>[en,ne]));
+function applyLanguage(next) {
+  appLang = next;
+  document.documentElement.lang = next === 'ne' ? 'ne' : 'en';
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  let node;
+  while ((node = walker.nextNode())) {
+    const raw = node.nodeValue;
+    const trimmed = raw.trim();
+    if (!trimmed) continue;
+    const translated = next === 'en' ? (neToEn[trimmed] || trimmed) : (enToNe[trimmed] || trimmed);
+    if (translated !== trimmed) node.nodeValue = raw.replace(trimmed, translated);
+  }
+  $('langBtn').textContent = next === 'ne' ? 'English' : 'नेपाली';
+  $('networkStatus').textContent = navigator.onLine
+    ? (next === 'ne' ? 'अफलाइन प्रयोगका लागि तयार' : 'Ready for offline use')
+    : (next === 'ne' ? 'अहिले अफलाइन — एप प्रयोग गर्न सक्नुहुन्छ' : 'Offline now — you can keep using the app');
+  try { localStorage.setItem('yagyahisab-language', next); } catch(e) {}
+}
+$('langBtn').addEventListener('click',()=>applyLanguage(appLang === 'ne' ? 'en' : 'ne'));
+try { const savedLanguage = localStorage.getItem('yagyahisab-language'); if (savedLanguage === 'en') appLang = 'en'; } catch(e) {}
+
 const $=id=>document.getElementById(id),v=id=>Number($(id).value),n=id=>Math.max(0,v(id));
-const money=x=>Number.isFinite(x)?'रु. '+x.toLocaleString('ne-NP',{maximumFractionDigits:2}):'—';
-const pct=x=>Number.isFinite(x)?x.toLocaleString('ne-NP',{maximumFractionDigits:2})+'%':'हिसाब सम्भव छैन';
+const money=x=>Number.isFinite(x)?(appLang==='ne'?'रु. ':'NPR ')+x.toLocaleString(appLang==='ne'?'ne-NP':'en-IN',{maximumFractionDigits:2}):'—';
+const pct=x=>Number.isFinite(x)?x.toLocaleString(appLang==='ne'?'ne-NP':'en-IN',{maximumFractionDigits:2})+'%':(appLang==='ne'?'हिसाब सम्भव छैन':'Cannot calculate');
 function show(id,title,big,items){$(id).innerHTML='<div class="result-label">'+title+'</div><div class="big">'+big+'</div><div class="stats">'+items.map(a=>'<div class="stat"><span>'+a[0]+'</span><strong>'+a[1]+'</strong></div>').join('')+'</div>'}
 function error(id,msg){$(id).innerHTML='<div class="result-label">कृपया जाँच गर्नुहोस्</div><div style="padding-top:10px;color:#8b3d32;font-size:14px">'+msg+'</div>'}
 document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-tab]').forEach(x=>{let on=x===b;x.classList.toggle('active',on);x.setAttribute('aria-selected',String(on))});document.querySelectorAll('.panel').forEach(x=>x.classList.toggle('active',x.id===b.dataset.tab))}));
@@ -73,12 +140,13 @@ $('resetInterest').onclick=()=>{[['intPrincipal',100000],['intRate',10],['intYea
 $('resetSIP').onclick=()=>{[['sipMonthly',5000],['sipRate',10],['sipYears',10],['sipStart',0]].forEach(a=>$(a[0]).value=a[1]);calcSIP()};
 $('resetPercent').onclick=()=>{$('pctA').value=100000;$('pctB').value=10;calcPercent()};
 calcLoan();calcInterest();calcSIP();calcPercent();
+if(appLang==='en') { applyLanguage('ne'); applyLanguage('en'); }
 const installBtn=$('installBtn');let installPrompt=null;
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;installBtn.hidden=false});
 installBtn.addEventListener('click',async()=>{if(!installPrompt){alert('Chrome को मेनु (⋮) खोल्नुहोस् र “Install app” वा “Add to Home screen” छान्नुहोस्।');return}installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;installBtn.hidden=true});
-window.addEventListener('appinstalled',()=>{installBtn.hidden=true;installBtn.textContent='✓ इन्स्टल भयो'});
-function netStatus(){let online=navigator.onLine;$('networkStatus').textContent=online?'अफलाइन प्रयोगका लागि तयार':'अहिले अफलाइन — एप प्रयोग गर्न सक्नुहुन्छ';$('statusDot').style.background=online?'#a9e6b8':'#e8c778'}
+window.addEventListener('appinstalled',()=>{installBtn.hidden=true;installBtn.textContent=appLang==='ne'?'✓ इन्स्टल भयो':'✓ Installed'});
+function netStatus(){let online=navigator.onLine;$('networkStatus').textContent=online?(appLang==='ne'?'अफलाइन प्रयोगका लागि तयार':'Ready for offline use'):(appLang==='ne'?'अहिले अफलाइन — एप प्रयोग गर्न सक्नुहुन्छ':'Offline now — you can keep using the app');$('statusDot').style.background=online?'#a9e6b8':'#e8c778'}
 window.addEventListener('online',netStatus);window.addEventListener('offline',netStatus);netStatus();
-if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{$('networkStatus').textContent='अफलाइन सुविधा सेटअप हुन सकेन'}));
+if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{$('networkStatus').textContent=appLang==='ne'?'अफलाइन सुविधा सेटअप हुन सकेन':'Could not set up offline support'}));
 </script>
 </body></html>
