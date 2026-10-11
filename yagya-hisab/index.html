@@ -183,9 +183,13 @@ $('resetPercent').onclick=()=>{$('pctA').value=100000;$('pctB').value=10;calcPer
 calcLoan();calcInterest();calcSIP();calcPercent();
 if(appLang==='en') { applyLanguage('ne'); applyLanguage('en'); }
 const installBtn=$('installBtn');let installPrompt=null;
-window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;installBtn.hidden=false;installBtn.textContent=appLang==='ne'?'＋ मोबाइलमा इन्स्टल गर्नुहोस्':'＋ Install app'});
-installBtn.addEventListener('click',async()=>{if(!installPrompt){alert(appLang==='ne'?'इन्स्टल गर्न Chrome मा यो पेज खोल्नुहोस्। त्यसपछि ⋮ मेनु → “Install app” वा “Add to Home screen” छान्नुहोस्। विकल्प नदेखिए पेज एकपटक रिफ्रेस गर्नुहोस्।':'Open this page in Chrome, then tap ⋮ → “Install app” or “Add to Home screen”. If the option is missing, refresh the page once.');return}installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;installBtn.hidden=true});
-window.addEventListener('appinstalled',()=>{installBtn.hidden=true;installBtn.textContent=appLang==='ne'?'✓ इन्स्टल भयो':'✓ Installed'});
+const INSTALL_FLAG='yagyahisab-installed-v1';
+function isInstalled(){return localStorage.getItem(INSTALL_FLAG)==='yes'||window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true}
+function markInstalled(){try{localStorage.setItem(INSTALL_FLAG,'yes')}catch(e){}installBtn.hidden=true;installBtn.setAttribute('aria-hidden','true')}
+if(isInstalled()) markInstalled();
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();if(isInstalled())return;installPrompt=e;installBtn.hidden=false;installBtn.textContent=appLang==='ne'?'＋ मोबाइलमा इन्स्टल गर्नुहोस्':'＋ Install app'});
+installBtn.addEventListener('click',async()=>{if(isInstalled()){markInstalled();return}if(!installPrompt){alert(appLang==='ne'?'इन्स्टल गर्न Chrome मा यो पेज खोल्नुहोस्। त्यसपछि ⋮ मेनु → “Install app” वा “Add to Home screen” छान्नुहोस्। विकल्प नदेखिए पेज एकपटक रिफ्रेस गर्नुहोस्।':'Open this page in Chrome, then tap ⋮ → “Install app” or “Add to Home screen”. If the option is missing, refresh the page once.');return}installPrompt.prompt();const choice=await installPrompt.userChoice;installPrompt=null;installBtn.hidden=true;if(choice&&choice.outcome==='accepted')markInstalled()});
+window.addEventListener('appinstalled',markInstalled);
 function netStatus(){let online=navigator.onLine;$('networkStatus').textContent=online?(appLang==='ne'?'अफलाइन प्रयोगका लागि तयार':'Ready for offline use'):(appLang==='ne'?'अहिले अफलाइन — एप प्रयोग गर्न सक्नुहुन्छ':'Offline now — you can keep using the app');$('statusDot').style.background=online?'#a9e6b8':'#e8c778'}
 window.addEventListener('online',netStatus);window.addEventListener('offline',netStatus);netStatus();
 if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').then(()=>navigator.serviceWorker.ready).then(()=>{$('networkStatus').textContent=navigator.onLine?(appLang==='ne'?'अफलाइन सुविधा तयार':'Offline support ready'):(appLang==='ne'?'अफलाइन मोड':'Offline mode');}).catch(()=>{$('networkStatus').textContent=appLang==='ne'?'अफलाइन सुविधा सेटअप हुन सकेन':'Could not set up offline support'}));
