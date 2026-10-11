@@ -8,7 +8,7 @@
 - Live payment mode is disabled by default; do not set live credentials until eSewa merchant approval.
 
 ## Supabase database
-Migrations are stored in `supabase/migrations/` and have been applied to project `wmlgqqfnhdqlssavnklo`:
+Migrations are stored in dependency order in `supabase/migrations/` and have been applied to project `wmlgqqfnhdqlssavnklo`:
 - `yagyahisab_subscriptions`: trusted server-managed entitlements.
 - `yagyahisab_payment_orders`: pending/verified payment orders, fixed NPR 99 amount.
 - `yagyahisab_saved_calculations`: Premium cloud history.
