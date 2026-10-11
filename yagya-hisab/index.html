@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#103c32">
-<meta name="description" content="नेपाली ऋण, EMI, ब्याज, SIP र प्रतिशत हिसाब गर्ने निःशुल्क अफलाइन एप।">
+<meta name="description" content="Nepali and English loan EMI, interest, SIP and percentage calculator. Free and usable offline after first visit.">
 <meta name="application-name" content="YagyaHisab">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -60,7 +60,7 @@ main{padding:22px 14px 30px}.intro{display:flex;justify-content:space-between;al
 let appLang = 'ne';
 const translations = {
 'तपाईंको पैसाको स्पष्ट हिसाब':'YOUR MONEY, CLEARER',
-'यज्ञ हिसाब':'यज्ञ हिसाब',
+'यज्ञ हिसाब':'YagyaHisab',
 'YagyaHisab — तपाईंको दैनिक वित्तीय हिसाब, अब सजिलो नेपालीमा। ऋण, ब्याज, SIP र प्रतिशतको हिसाब एउटै ठाउँमा।':'YagyaHisab — your everyday money calculations, made simple. Loans, interest, SIP and percentages in one place.',
 'अफलाइन प्रयोगका लागि तयार':'Ready for offline use',
 '＋ मोबाइलमा इन्स्टल गर्नुहोस्':'＋ Install on phone',
@@ -121,7 +121,7 @@ function applyLanguage(next) {
     : (next === 'ne' ? 'अहिले अफलाइन — एप प्रयोग गर्न सक्नुहुन्छ' : 'Offline now — you can keep using the app');
   try { localStorage.setItem('yagyahisab-language', next); } catch(e) {}
 }
-$('langBtn').addEventListener('click',()=>applyLanguage(appLang === 'ne' ? 'en' : 'ne'));
+$('langBtn').addEventListener('click',()=>{applyLanguage(appLang === 'ne' ? 'en' : 'ne');calcLoan();calcInterest();calcSIP();calcPercent()});
 try { const savedLanguage = localStorage.getItem('yagyahisab-language'); if (savedLanguage === 'en') appLang = 'en'; } catch(e) {}
 
 const $=id=>document.getElementById(id),v=id=>Number($(id).value),n=id=>Math.max(0,v(id));
