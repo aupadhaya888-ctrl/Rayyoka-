@@ -1,46 +1,50 @@
 # YagyaHisab monetization foundation
 
-## Current configuration
-- Product: YagyaHisab website/PWA
-- Free + ads (ads are intentionally not enabled until approval)
-- Premium: NPR 99 / 30 days, manual renewal
-- First payment provider: eSewa
-- Live payment mode is disabled by default.
+## Product and launch mode
+- Website / installable PWA first.
+- Free calculators; advertising remains off until ad-network approval and privacy controls are completed.
+- Premium: NPR 99 per 30 days, manual renewal at first.
+- Payment provider: eSewa.
+- Live payment mode is disabled by default; do not set live credentials until eSewa merchant approval.
 
 ## Supabase database
-Migration applied to project `wmlgqqfnhdqlssavnklo`:
-- `yagyahisab_subscriptions`
-- `yagyahisab_payment_orders`
-- `yagyahisab_saved_calculations`
-- `yagyahisab_budgets`
+Migrations are stored in `supabase/migrations/` and have been applied to project `wmlgqqfnhdqlssavnklo`:
+- `yagyahisab_subscriptions`: trusted server-managed entitlements.
+- `yagyahisab_payment_orders`: pending/verified payment orders, fixed NPR 99 amount.
+- `yagyahisab_saved_calculations`: Premium cloud history.
+- `yagyahisab_budgets`: Premium budgets.
+- `finalize_yagyahisab_payment(...)`: atomic, idempotent payment finalization, executable only by service_role.
 
-Subscription/payment tables are read-only to authenticated browser clients; trusted backend code performs payment/order/subscription writes. Saved calculations and budgets use user ownership RLS. Migration source: `supabase/migrations/20261011_yagyahisab_monetization_foundation.sql`.
+RLS is enabled on all four tables. Browser users cannot insert/update subscription or payment records. Cloud history and budget operations require an active, unexpired Premium entitlement as well as ownership. Do not put Supabase secret/service-role keys in the browser or GitHub.
 
-## Billing Edge Function
-Function source: `supabase/functions/yagyahisab-billing/index.ts`.
-Actions: `status`, `create-payment`, `verify-payment`.
-The function is designed to fail closed when eSewa credentials are missing. It never trusts the browser's success redirect alone: it validates the signed response and queries eSewa status before activating a 30-day entitlement.
+## Edge Function
+Source: `supabase/functions/yagyahisab-billing/index.ts`
+Deployed function: `yagyahisab-billing` (JWT verification enabled).
+Actions:
+- `status`: returns Free/Premium status from the server.
+- `create-payment`: creates a fixed NPR 99 eSewa order and signature, but fails closed unless server-side credentials exist.
+- `verify-payment`: validates the signed response, checks transaction status with eSewa, then calls the atomic finalization RPC.
 
-### Required Edge Function secrets
-Do not put these in HTML, GitHub, or any public repository:
+## Secrets (Supabase Dashboard → Edge Functions → Secrets)
+For UAT only, set secrets from the official eSewa developer dashboard/docs:
 - `ESEWA_MODE=test`
-- `ESEWA_PRODUCT_CODE=EPAYTEST` (for eSewa UAT only)
-- `ESEWA_SECRET_KEY=<merchant/UAT secret>`
+- `ESEWA_PRODUCT_CODE=EPAYTEST`
+- `ESEWA_SECRET_KEY=<test secret>`
 
-Production must not be enabled until eSewa approves the merchant and issues production credentials:
-- `ESEWA_MODE=live`
-- `ESEWA_PRODUCT_CODE=<production product code>`
-- `ESEWA_SECRET_KEY=<production secret>`
-- `ESEWA_LIVE_ENABLED=true` only after explicit go-live checks.
+Do not send credentials in chat and do not commit them. Production must remain disabled until eSewa approves the merchant and supplies production credentials. Only then, after successful UAT and review, configure `ESEWA_MODE=live`, the production product code and secret, and explicitly set `ESEWA_LIVE_ENABLED=true`.
 
-Use Supabase Dashboard > Edge Functions > Secrets or Supabase CLI secrets. Never commit secret values. Test credentials should be configured only in Supabase secrets. Live payment creation returns a disabled/not-configured response until the required variables exist.
+## Current UI
+- Upgrade/status panel is integrated.
+- Payment return handling is integrated and only activates Premium after server verification.
+- Saved history, budget entry/list, loan comparison and print/save-as-PDF tools are integrated into the Premium panel.
+- Ads are intentionally not loaded yet. The ad slot is hidden until the site is approved and privacy/consent requirements are completed.
 
-## Important launch blockers
-1. Complete merchant onboarding and verify the current eSewa V2 integration/status API requirements against the merchant documentation.
-2. Finish the frontend Upgrade UI and payment return handler, then test end-to-end in UAT.
-3. Complete the Premium entitlement checks in the app. Browser UI is convenience only; protect cloud data with RLS and server checks.
-4. Advertising is intentionally not connected. Apply for approval and implement provider-required consent/privacy controls before showing ads.
-5. Complete privacy, terms, refund, support contact, tax and business disclosures.
-6. Test renewal, expiration, refunds, duplicate callbacks, failed payments, stale/offline sessions and account deletion.
+## Remaining launch blockers
+1. Test the eSewa UAT checkout end-to-end with official test credentials configured as Supabase secrets.
+2. Confirm current eSewa V2 status API response and signature format for the merchant's exact integration.
+3. Add an authenticated payment-reconciliation/support path for customers who pay but close the browser before returning.
+4. Complete privacy, terms, refund policy, support contact and applicable Nepal business/tax disclosures.
+5. Apply for an ad network and implement required consent/ads settings only after approval.
+6. Test Free/Premium boundaries, expired entitlements, RLS cross-account isolation, duplicate returns, refunds, offline behavior and account deletion.
 
-This is a staged implementation foundation, not a statement that the app is ready to collect live money.
+This is a staged foundation, not permission to accept live payments today.
