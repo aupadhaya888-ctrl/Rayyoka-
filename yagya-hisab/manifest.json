@@ -2,7 +2,7 @@
   "id": "./",
   "name": "YagyaHisab — यज्ञ हिसाब",
   "short_name": "YagyaHisab",
-  "description": "नेपाली ऋण, EMI, ब्याज, SIP र प्रतिशत हिसाब गर्ने निःशुल्क अफलाइन एप।",
+  "description": "Nepali and English calculator for loan EMI, interest, SIP investment and percentages. Works offline after first visit.",
   "lang": "ne-NP",
   "start_url": "./",
   "scope": "./",
@@ -18,7 +18,13 @@
       "src": "icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
     }
   ]
 }
