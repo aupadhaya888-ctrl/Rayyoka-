@@ -21,6 +21,10 @@ main{padding:22px 14px 30px}.intro{display:flex;justify-content:space-between;al
 
 .auth-gate{max-width:520px;margin:24px auto 32px;padding:0 14px}.auth-card{background:#fff;border:1px solid #dce6de;border-radius:22px;padding:clamp(20px,5vw,30px);box-shadow:0 14px 40px #123d2d0c}.auth-brand{font-size:11px;letter-spacing:1.8px;color:#a27b27;font-weight:850}.auth-card h2{font-size:25px;margin:6px 0 5px;color:#103c32}.auth-sub{font-size:13px;line-height:1.65;color:#718079;margin:0 0 20px}.auth-switch{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:18px}.auth-switch button{border:1px solid #dce6de;border-radius:11px;padding:11px 8px;background:#f5f8f5;color:#476256;font-weight:800}.auth-switch button.active{background:#103c32;border-color:#103c32;color:#fff}.auth-field{margin-bottom:13px}.auth-field label{display:block;font-size:12px;color:#52665c;font-weight:800;margin-bottom:7px}.auth-field input{width:100%;border:1px solid #d7e1da;border-radius:12px;padding:13px 12px;background:#fbfdfb;color:#152b25;font:inherit;outline:none}.auth-field input:focus{border-color:#39836b;box-shadow:0 0 0 3px #39836b18}.auth-submit{width:100%;border:0;border-radius:12px;background:#145846;color:#fff;padding:14px;font-weight:850;margin-top:5px}.auth-link{border:0;background:none;color:#145846;text-decoration:underline;padding:12px 0 0;font-size:13px;font-weight:700}.auth-message{display:none;margin:13px 0 0;padding:11px 12px;border-radius:11px;font-size:13px;line-height:1.55;overflow-wrap:anywhere}.auth-message.show{display:block}.auth-message.error{background:#fff0ee;border:1px solid #f0c9c3;color:#8b3026}.auth-message.success{background:#edf8ef;border:1px solid #cde7d1;color:#215e35}.auth-small{font-size:11px;color:#718079;line-height:1.65;margin:15px 0 0}.account-btn{border:1px solid #ffffff66;background:#ffffff16;color:white;border-radius:12px;padding:10px 12px;font-weight:800;font-size:12px}.account-btn[hidden]{display:none}
 
+
+.premium-wrap{margin:0 0 16px}.premium-card{background:linear-gradient(135deg,#103c32,#1a654f);color:#fff;border-radius:19px;padding:18px;border:1px solid #236b54;box-shadow:0 12px 30px #103c3215}.premium-top{display:flex;align-items:start;justify-content:space-between;gap:12px;flex-wrap:wrap}.premium-card h3{margin:0 0 5px;font-size:19px}.premium-card p{margin:0;color:#d8e8df;font-size:13px;line-height:1.65}.premium-price{font-size:25px;font-weight:900;color:#e8c778;white-space:nowrap}.premium-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.premium-btn{border:1px solid #e8c778;background:#e8c778;color:#173c30;border-radius:11px;padding:11px 14px;font-weight:850}.premium-btn.secondary{background:#ffffff12;color:#fff;border-color:#ffffff60}.premium-status{font-size:12px;margin-top:11px;color:#e5f1e8;line-height:1.6}.premium-tools{margin-top:14px;display:grid;gap:12px}.premium-tools .card{box-shadow:none}.premium-tools[hidden]{display:none}.premium-tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.premium-list{font-size:12px;line-height:1.6;color:#52665c;overflow-wrap:anywhere}.premium-list article{border-bottom:1px solid var(--line);padding:8px 0}.premium-list article:last-child{border-bottom:0}.premium-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.premium-form label{display:block;font-size:12px;font-weight:800;color:#52665c;margin-bottom:5px}.premium-form input,.premium-form select{width:100%;border:1px solid #d7e1da;border-radius:10px;padding:10px;background:#fbfdfb;color:var(--ink)}.legal-links{margin-top:9px}.legal-links a{color:var(--green);text-decoration:underline;margin:0 7px}.ad-slot{display:none;margin:14px 0;padding:12px;border:1px dashed #cbd8ce;border-radius:12px;color:#718079;font-size:11px;text-align:center}@media(max-width:520px){.premium-tool-grid,.premium-form{grid-template-columns:1fr}.premium-card{border-radius:16px}}
+@media print{.hero-actions,.tabs,.actions,.premium-wrap,.premium-tools,footer,.auth-gate{display:none!important}.panel{display:block!important}.hero{background:#fff!important;color:#111!important}.tagline,.status{color:#333!important}body{background:#fff!important}.card{break-inside:avoid;box-shadow:none!important}}
+
 @media(min-width:700px){.hero{padding:32px 24px 35px}main{padding-top:27px}.tabs{gap:10px}.tab{padding:15px}.hero-bottom{margin-top:21px}}
 @media(max-width:520px){.tabs{gap:6px}.tab{font-size:12px;padding:11px 3px;border-radius:11px}.tab .tab-icon{font-size:17px}.grid{grid-template-columns:1fr;gap:13px}.stats{grid-template-columns:1fr}.stat{display:flex;justify-content:space-between;align-items:center;gap:12px}.stat strong{text-align:right;margin:0}.intro{align-items:start;flex-direction:column}.card{border-radius:17px}.hero{padding-top:21px}.logo{width:46px;height:46px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
@@ -69,6 +73,53 @@ main{padding:22px 14px 30px}.intro{display:flex;justify-content:space-between;al
 
 <main id="appMain" hidden>
 <div class="intro"><div><h2>कुन हिसाब गर्ने?</h2><p>रकम भर्नुहोस् र तुरुन्त नतिजा हेर्नुहोस्।</p></div><span class="local-pill">🔒 निजी हिसाब</span></div>
+
+<section class="premium-wrap" aria-labelledby="premiumTitle">
+  <div class="premium-card">
+    <div class="premium-top">
+      <div><h3 id="premiumTitle">👑 YagyaHisab Premium</h3><p>Ad-free when ads launch · Saved history · Monthly budget · Comparisons · PDF reports</p></div>
+      <div class="premium-price">NPR 99<span style="font-size:12px;font-weight:650;color:#d8e8df"> / 30 days</span></div>
+    </div>
+    <div class="premium-actions"><button class="premium-btn" id="upgradeBtn" type="button">Upgrade with eSewa</button><button class="premium-btn secondary" id="refreshPlanBtn" type="button">Refresh plan status</button><button class="premium-btn secondary" id="reportBtn" type="button">Print / Save PDF</button></div>
+    <div class="premium-status" id="premiumStatus" role="status">Free plan · Payment is currently disabled while merchant setup and testing are pending.</div>
+  </div>
+  <div class="ad-slot" id="adSlot" aria-label="Advertising area">Ads will only be shown after advertising approval and privacy setup.</div>
+</section>
+<section class="premium-tools" id="premiumTools" hidden aria-label="Premium tools">
+  <div class="premium-tool-grid">
+    <section class="card">
+      <div class="card-head"><div class="head-icon">🗂️</div><div><h3>Saved calculation history</h3><p class="hint">Save the active calculator's inputs and result to your account.</p></div></div>
+      <div class="actions"><button class="btn primary" id="saveCalculationBtn" type="button">Save current calculation</button><button class="btn" id="loadHistoryBtn" type="button">Refresh history</button></div>
+      <div id="historyList" class="premium-list" aria-live="polite">No saved calculations loaded.</div>
+    </section>
+    <section class="card">
+      <div class="card-head"><div class="head-icon">📒</div><div><h3>Monthly budget</h3><p class="hint">Save a simple plan and actual amount for each category.</p></div></div>
+      <form id="budgetForm" class="premium-form">
+        <div><label for="budgetMonth">Month</label><input id="budgetMonth" type="month" required></div>
+        <div><label for="budgetCategory">Category</label><input id="budgetCategory" maxlength="80" required placeholder="Food, rent, savings"></div>
+        <div><label for="budgetPlanned">Planned (NPR)</label><input id="budgetPlanned" type="number" min="0" step=".01" value="0" required></div>
+        <div><label for="budgetActual">Actual (NPR)</label><input id="budgetActual" type="number" min="0" step=".01" value="0" required></div>
+        <div style="grid-column:1/-1"><label for="budgetNotes">Notes (optional)</label><input id="budgetNotes" maxlength="500" placeholder="Optional notes"></div>
+        <button class="btn primary" type="submit" style="grid-column:1/-1">Save budget</button>
+      </form>
+      <div class="actions"><button class="btn" id="loadBudgetBtn" type="button">Refresh budget</button></div>
+      <div id="budgetList" class="premium-list" aria-live="polite">No budget entries loaded.</div>
+    </section>
+  </div>
+  <section class="card">
+    <div class="card-head"><div class="head-icon">⚖️</div><div><h3>Compare two loan options</h3><p class="hint">Compare estimated EMI for two loans. Fees and lender-specific rules may change actual costs.</p></div></div>
+    <div class="premium-form">
+      <div><label for="cmpAAmount">Option A loan (NPR)</label><input id="cmpAAmount" type="number" min="1" value="500000"></div>
+      <div><label for="cmpARate">Option A annual rate (%)</label><input id="cmpARate" type="number" min="0" step=".01" value="12"></div>
+      <div><label for="cmpBAmount">Option B loan (NPR)</label><input id="cmpBAmount" type="number" min="1" value="500000"></div>
+      <div><label for="cmpBRate">Option B annual rate (%)</label><input id="cmpBRate" type="number" min="0" step=".01" value="10.5"></div>
+      <div><label for="cmpYears">Term (years)</label><input id="cmpYears" type="number" min=".1" step=".5" value="5"></div>
+    </div>
+    <div class="actions"><button class="btn primary" id="compareBtn" type="button">Compare options</button></div>
+    <div id="compareResult" class="result" aria-live="polite">Enter the two options and compare estimated monthly payments.</div>
+  </section>
+</section>
+
 <nav class="tabs" aria-label="हिसाबका प्रकार">
 <button class="tab active" data-tab="loan" aria-selected="true"><span class="tab-icon">🏦</span>ऋण / किस्ता</button>
 <button class="tab" data-tab="interest" aria-selected="false"><span class="tab-icon">📈</span>ब्याज</button>
@@ -92,7 +143,7 @@ main{padding:22px 14px 30px}.intro{display:flex;justify-content:space-between;al
 <div class="grid"><div class="field"><label for="pctA">आधार रकम (A)</label><input id="pctA" type="number" value="100000" inputmode="decimal"></div><div class="field"><label for="pctB">प्रतिशत (%) वा तुलना रकम (B)</label><input id="pctB" type="number" value="10" inputmode="decimal"></div></div>
 <div class="actions"><button class="btn primary" id="calcPercent">प्रतिशत हिसाब गर्नुहोस् ↗</button><button class="btn" id="resetPercent">रिसेट</button></div><div id="percentResult" class="result" aria-live="polite"></div><p class="note">पहिलो नतिजा A को B प्रतिशत रकम हो। अर्को नतिजाले B लाई A सँग तुलना गर्छ।</p></section>
 </main>
-<footer id="appFooter" hidden><div class="footer-brand">YagyaHisab · यज्ञ हिसाब</div>सबै हिसाब तपाईंको डिभाइसमा गरिन्छ। तपाईंको रकम कुनै सर्भरमा पठाइँदैन।<br>अफलाइन प्रयोगका लागि एकपटक इन्टरनेटमा खोल्नुहोस्। वित्तीय निर्णय गर्नुअघि नतिजा पुनः जाँच गर्नुहोस्।</footer>
+<footer id="appFooter" hidden><div class="footer-brand">YagyaHisab · यज्ञ हिसाब</div>Basic calculator inputs are processed on your device. Saved history and budgets sync to your account when you use those Premium features.<br>Basic calculations can work offline after the app is loaded. Double-check estimates before making financial decisions.<div class="legal-links"><a href="./privacy.html">Privacy Policy</a><a href="./terms.html">Terms of Use</a><a href="./MONETIZATION.md">Service information</a></div></footer>
 <script>
 "use strict";
 let appLang = 'ne';
@@ -234,12 +285,14 @@ if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.ser
     appFooter.hidden = false;
     signOutBtn.hidden = false;
     signOutBtn.textContent = (appLang==="ne"?"लगआउट":"Sign out") + (user?.email ? " · "+user.email : "");
+    window.dispatchEvent(new Event("yagyahisab:authenticated"));
   }
   function showGate() {
     gate.hidden = false;
     appMain.hidden = true;
     appFooter.hidden = true;
     signOutBtn.hidden = true;
+    window.dispatchEvent(new Event("yagyahisab:signedout"));
   }
   function saveSession(data) {
     session = {...data, expires_at: data.expires_at || (Math.floor(Date.now()/1000)+(data.expires_in||3600))};
@@ -371,6 +424,185 @@ if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.ser
   }
   handleAuthCallback().then(handled=>{ if(!handled) restore(); }).catch(()=>restore());
 })();
+
+
+<script>
+/* Premium billing UI. Payments fail closed until the owner configures eSewa UAT credentials in Supabase secrets. */
+(() => {
+  const BASE = "https://wmlgqqfnhdqlssavnklo.supabase.co";
+  const PUBLIC_KEY = "sb_publishable_qX_cC2cjeGqvTG5bhoyGsg_LqN_dr1b";
+  const SESSION_KEY = "yagyahisab-auth-session-v1";
+  const statusEl = document.getElementById("premiumStatus");
+  const toolsEl = document.getElementById("premiumTools");
+  const upgradeBtn = document.getElementById("upgradeBtn");
+  const $p = (id) => document.getElementById(id);
+  let plan = "free";
+  let currentSession = null;
+  const savedPlanKey = "yagyahisab-premium-status-v1";
+  function session() { try { return JSON.parse(localStorage.getItem(SESSION_KEY) || "null"); } catch (_) { return null; } }
+  function message(s) { statusEl.textContent = s; }
+  async function callBilling(action, extra={}) {
+    const s = session();
+    if (!s?.access_token) throw new Error("Please log in first.");
+    const res = await fetch(BASE + "/functions/v1/yagyahisab-billing", {
+      method: "POST",
+      headers: { "apikey": PUBLIC_KEY, "Authorization": "Bearer " + s.access_token, "Content-Type": "application/json" },
+      body: JSON.stringify({ action, ...extra })
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error(data.error || "Billing service is not ready yet.");
+    return data;
+  }
+  function showPlan(data) {
+    plan = data?.plan === "premium" && data?.expires_at && Date.parse(data.expires_at) > Date.now() ? "premium" : "free";
+    const cached = { plan, expires_at: data?.expires_at || null, checked_at: Date.now() };
+    try { localStorage.setItem(savedPlanKey, JSON.stringify(cached)); } catch (_) {}
+    toolsEl.hidden = plan !== "premium";
+    upgradeBtn.textContent = plan === "premium" ? "Premium active" : "Upgrade with eSewa";
+    upgradeBtn.disabled = plan === "premium";
+    upgradeBtn.style.opacity = plan === "premium" ? ".7" : "1";
+    message(plan === "premium" ? "Premium active until " + new Date(data.expires_at).toLocaleDateString() + ". Ads will be disabled for Premium when advertising is enabled." : "Free plan · NPR 99 for 30 days · Manual renewal. Payment is disabled until eSewa setup is complete.");
+  }
+  async function refreshStatus() {
+    const s = session();
+    if (!s?.access_token) { toolsEl.hidden = true; message("Sign in to view your plan. / आफ्नो योजना हेर्न लगइन गर्नुहोस्।"); return; }
+    currentSession = s;
+    try { showPlan(await callBilling("status")); }
+    catch (e) {
+      try {
+        const cached = JSON.parse(localStorage.getItem(savedPlanKey) || "null");
+        if (cached?.plan === "premium" && cached.expires_at && Date.parse(cached.expires_at) > Date.now()) {
+          plan = "premium"; toolsEl.hidden = false; upgradeBtn.disabled = true;
+          message("Offline: last verified Premium entitlement is cached until " + new Date(cached.expires_at).toLocaleDateString() + ". Cloud history and budget need internet.");
+          return;
+        }
+      } catch (_) {}
+      toolsEl.hidden = true;
+      message("Plan status could not be refreshed. Basic calculators remain available. " + e.message);
+    }
+  }
+  function submitGateway(payload) {
+    const form = document.createElement("form");
+    form.method = "POST"; form.action = payload.gateway;
+    Object.entries(payload.fields || {}).forEach(([key,value]) => {
+      const input = document.createElement("input"); input.type = "hidden"; input.name = key; input.value = String(value); form.appendChild(input);
+    });
+    document.body.appendChild(form); form.submit();
+  }
+  async function handlePaymentReturn() {
+    const params = new URLSearchParams(location.search);
+    const result = params.get("payment");
+    const data = params.get("data");
+    if (result === "failed") { message("Payment was cancelled or failed. No Premium access was activated."); history.replaceState(null,"",location.pathname); return; }
+    if (result === "success" && data) {
+      message("Checking the payment with eSewa…");
+      try {
+        const verified = await callBilling("verify-payment", { response_data: data });
+        if (!verified.ok) throw new Error("Payment verification is not complete.");
+        history.replaceState(null,"",location.pathname);
+        showPlan({plan:"premium",expires_at:verified.expires_at});
+        message("Payment verified. Premium is active until " + new Date(verified.expires_at).toLocaleDateString() + ".");
+      } catch (e) {
+        message("We could not confirm this payment yet. Do not pay again immediately. " + e.message + " If your wallet was charged, keep your eSewa transaction reference and contact support.");
+      }
+    } else if (result === "success" && !data) {
+      message("eSewa returned without payment details. Premium will stay off until the server verifies the transaction.");
+    }
+  }
+  upgradeBtn.addEventListener("click", async () => {
+    if (plan === "premium") return;
+    upgradeBtn.disabled = true; message("Checking payment setup…");
+    try { const payload = await callBilling("create-payment"); submitGateway(payload); }
+    catch (e) { message(e.message + " No payment has been requested."); }
+    finally { upgradeBtn.disabled = plan === "premium"; }
+  });
+  $p("refreshPlanBtn").addEventListener("click", refreshStatus);
+  $p("reportBtn").addEventListener("click", () => window.print());
+  window.addEventListener("yagyahisab:authenticated", () => { refreshStatus(); handlePaymentReturn(); });
+  window.addEventListener("yagyahisab:signedout", () => { plan="free"; toolsEl.hidden=true; message("Sign in to view your plan."); });
+  window.addEventListener("online", refreshStatus);
+
+  function activeCalc() {
+    const active = document.querySelector(".panel.active");
+    if (!active) return null;
+    const inputs = {};
+    active.querySelectorAll("input,select").forEach(el => { if (el.id) inputs[el.id] = el.value; });
+    const result = active.querySelector(".result");
+    const type = ["loan","interest","sip","percent"].includes(active.id) ? active.id : "other";
+    return { title: ({loan:"Loan EMI",interest:"Interest",sip:"SIP",percent:"Percentage"})[type] || "Saved calculation", calculator_type: type, inputs, results: { text: result?.innerText || "" } };
+  }
+  async function rest(path, options={}) {
+    const s = session(); if (!s?.access_token) throw new Error("Please log in again.");
+    const res = await fetch(BASE + "/rest/v1/" + path, {
+      method: options.method || "GET",
+      headers: { "apikey": PUBLIC_KEY, "Authorization": "Bearer " + s.access_token, "Content-Type": "application/json", "Prefer": options.prefer || "return=representation" },
+      body: options.body ? JSON.stringify(options.body) : undefined
+    });
+    const data = await res.json().catch(() => []);
+    if (!res.ok) throw new Error(data?.message || data?.hint || "Premium data request failed. Check your Premium status.");
+    return data;
+  }
+  const safe = (tag, text) => { const el=document.createElement(tag); el.textContent=text; return el; };
+  async function loadHistory() {
+    const list=$p("historyList"); list.textContent="Loading…";
+    try {
+      const rows=await rest("yagyahisab_saved_calculations?select=id,title,calculator_type,created_at,results&order=created_at.desc&limit=20");
+      list.replaceChildren();
+      if (!rows.length) { list.textContent="No saved calculations yet."; return; }
+      rows.forEach(row=>{ const a=document.createElement("article"); a.appendChild(safe("strong",row.title+" · "+row.calculator_type)); a.appendChild(safe("div",new Date(row.created_at).toLocaleString())); a.appendChild(safe("div",String(row.results?.text||""))); list.appendChild(a); });
+    } catch(e) { list.textContent=e.message; }
+  }
+  $p("saveCalculationBtn").addEventListener("click", async () => {
+    const item=activeCalc(); if(!item)return;
+    const title=prompt("Name this calculation / हिसाबको नाम राख्नुहोस्:",item.title); if(title===null)return;
+    try { await rest("yagyahisab_saved_calculations",{method:"POST",body:{user_id:session().user.id,title:title.slice(0,120)||item.title,calculator_type:item.calculator_type,inputs:item.inputs,results:item.results}}); await loadHistory(); message("Calculation saved to your account."); }
+    catch(e) { message(e.message); }
+  });
+  $p("loadHistoryBtn").addEventListener("click",loadHistory);
+  const monthInput=$p("budgetMonth"); monthInput.value=new Date().toISOString().slice(0,7);
+  async function loadBudgets() {
+    const list=$p("budgetList"); list.textContent="Loading…";
+    try {
+      const rows=await rest("yagyahisab_budgets?select=id,month_start,category,planned_npr,actual_npr,notes&order=month_start.desc&limit=30");
+      list.replaceChildren();
+      if (!rows.length) { list.textContent="No budget entries yet."; return; }
+      rows.forEach(row=>{ const a=document.createElement("article"); a.appendChild(safe("strong",row.month_start+" · "+row.category)); a.appendChild(safe("div","Planned: NPR "+Number(row.planned_npr).toLocaleString()+" · Actual: NPR "+Number(row.actual_npr).toLocaleString())); if(row.notes)a.appendChild(safe("div",row.notes)); list.appendChild(a); });
+    } catch(e) { list.textContent=e.message; }
+  }
+  $p("budgetForm").addEventListener("submit",async e=>{
+    e.preventDefault();
+    try {
+      const month=monthInput.value+"-01";
+      const payload={user_id:session().user.id,month_start:month,category:$p("budgetCategory").value.trim(),planned_npr:Number($p("budgetPlanned").value),actual_npr:Number($p("budgetActual").value),notes:$p("budgetNotes").value.trim()};
+      await rest("yagyahisab_budgets?on_conflict=user_id,month_start,category",{method:"POST",prefer:"resolution=merge-duplicates,return=representation",body:payload});
+      await loadBudgets(); message("Budget saved.");
+    } catch(e) { message(e.message); }
+  });
+  $p("loadBudgetBtn").addEventListener("click",loadBudgets);
+  function emi(principal, annualRate, months) {
+    const r=annualRate/1200; return r===0?principal/months:principal*r/(1-Math.pow(1+r,-months));
+  }
+  $p("compareBtn").addEventListener("click",()=>{
+    const months=Math.round(Number($p("cmpYears").value)*12), a=Number($p("cmpAAmount").value), ar=Number($p("cmpARate").value), b=Number($p("cmpBAmount").value), br=Number($p("cmpBRate").value);
+    if(!months||a<=0||b<=0||ar<0||br<0){$p("compareResult").textContent="Please enter valid loan values.";return;}
+    const ea=emi(a,ar,months), eb=emi(b,br,months), fmt=n=>"NPR "+n.toLocaleString("en-IN",{maximumFractionDigits:2});
+    $p("compareResult").textContent="Option A EMI: "+fmt(ea)+" · total interest: "+fmt(ea*months-a)+". Option B EMI: "+fmt(eb)+" · total interest: "+fmt(eb*months-b)+". Monthly difference: "+fmt(Math.abs(ea-eb))+".";
+  });
+  const params = new URLSearchParams(location.search);
+  if(params.get("payment")==="success" || params.get("payment")==="failed") {
+    setTimeout(()=>{ if(session()?.access_token) handlePaymentReturn(); },300);
+  } else {
+    const s=session();
+    if(s?.access_token) refreshStatus();
+    else {
+      try {
+        const cached=JSON.parse(localStorage.getItem(savedPlanKey)||"null");
+        if(cached?.plan==="premium" && cached.expires_at && Date.parse(cached.expires_at)>Date.now()) { plan="premium"; toolsEl.hidden=false; message("Last verified Premium access is cached; reconnect to refresh cloud data."); }
+      } catch(_){}
+    }
+  }
+})();
+</script>
 
 </script>
 </body></html>
