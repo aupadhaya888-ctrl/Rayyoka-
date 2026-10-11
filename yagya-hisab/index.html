@@ -424,8 +424,7 @@ if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.ser
   }
   handleAuthCallback().then(handled=>{ if(!handled) restore(); }).catch(()=>restore());
 })();
-
-
+</script>
 <script>
 /* Premium billing UI. Payments fail closed until the owner configures eSewa UAT credentials in Supabase secrets. */
 (() => {
@@ -602,7 +601,5 @@ if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.ser
     }
   }
 })();
-</script>
-
 </script>
 </body></html>
