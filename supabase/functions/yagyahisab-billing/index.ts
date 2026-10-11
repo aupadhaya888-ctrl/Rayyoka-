@@ -85,7 +85,7 @@ Deno.serve(async (req: Request) => {
       amount: String(PRICE), tax_amount: "0", total_amount: String(PRICE),
       transaction_uuid: transactionUuid, product_code: productCode,
       product_service_charge: "0", product_delivery_charge: "0",
-      success_url: APP_URL + "?payment=success", failure_url: APP_URL + "?payment=failed",
+      success_url: APP_URL, failure_url: APP_URL + "?payment=failed",
       signed_field_names: signedFieldNames, signature,
     };
     const gateway = mode === "live" ? "https://epay.esewa.com.np/api/epay/main/v2/form" : "https://rc-epay.esewa.com.np/api/epay/main/v2/form";
