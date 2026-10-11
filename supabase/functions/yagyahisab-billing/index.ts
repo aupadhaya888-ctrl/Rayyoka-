@@ -135,22 +135,14 @@ Deno.serve(async (req: Request) => {
       return json({ error: "eSewa has not confirmed this payment as complete." }, 400);
     }
 
-    const now = new Date();
-    const { data: current } = await admin.from("yagyahisab_subscriptions").select("expires_at,status,plan_key").eq("user_id", user.id).maybeSingle();
-    const currentExpiry = current?.plan_key === "premium" && current.status === "active" && current.expires_at && Date.parse(current.expires_at) > now.getTime() ? new Date(current.expires_at) : now;
-    const startsAt = currentExpiry > now ? currentExpiry : now;
-    const expiresAt = new Date(startsAt.getTime() + 30 * 24 * 60 * 60 * 1000);
-    const { error: updateOrderError } = await admin.from("yagyahisab_payment_orders").update({
-      status: "complete", provider_reference: String(verified.ref_id || response.transaction_code || ""),
-      verified_at: now.toISOString(), verification_data: { status: verified.status, transaction_uuid: transactionUuid, total_amount: verified.total_amount, product_code: verified.product_code },
-    }).eq("id", order.id).eq("user_id", user.id);
-    if (updateOrderError) return json({ error: "Payment verified but order update failed. Contact support with transaction ID " + transactionUuid }, 500);
-    const { error: subError } = await admin.from("yagyahisab_subscriptions").upsert({
-      user_id: user.id, plan_key: "premium", status: "active", provider: "esewa",
-      started_at: startsAt.toISOString(), expires_at: expiresAt.toISOString(), updated_at: now.toISOString(),
+    const { data: finalized, error: finalizeError } = await admin.rpc("finalize_yagyahisab_payment", {
+      p_user_id: user.id,
+      p_transaction_uuid: transactionUuid,
+      p_provider_reference: String(verified.ref_id || response.transaction_code || ""),
+      p_verification_data: { status: verified.status, transaction_uuid: transactionUuid, total_amount: verified.total_amount, product_code: verified.product_code },
     });
-    if (subError) return json({ error: "Payment verified but Premium activation needs support. Keep this transaction ID: " + transactionUuid }, 500);
-    return json({ ok: true, plan: "premium", expires_at: expiresAt.toISOString() });
+    if (finalizeError || !finalized?.ok) return json({ error: "Payment was verified but activation needs support. Keep this transaction ID: " + transactionUuid }, 500);
+    return json(finalized);
   }
   return json({ error: "Unknown billing action." }, 400);
 });
