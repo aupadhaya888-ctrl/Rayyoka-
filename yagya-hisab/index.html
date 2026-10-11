@@ -516,7 +516,7 @@ if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.ser
     finally { upgradeBtn.disabled = plan === "premium"; }
   });
   $p("refreshPlanBtn").addEventListener("click", refreshStatus);
-  $p("reportBtn").addEventListener("click", () => window.print());
+  $p("reportBtn").addEventListener("click", () => { if (plan !== "premium") { message("PDF reports are a Premium feature. Payment setup is still pending, so no payment has been requested."); return; } window.print(); });
   window.addEventListener("yagyahisab:authenticated", () => { refreshStatus(); handlePaymentReturn(); });
   window.addEventListener("yagyahisab:signedout", () => { plan="free"; toolsEl.hidden=true; message("Sign in to view your plan."); });
   window.addEventListener("online", refreshStatus);
