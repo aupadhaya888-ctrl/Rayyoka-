@@ -59,9 +59,9 @@ main{padding:22px 14px 30px}.intro{display:flex;justify-content:space-between;al
 "use strict";
 let appLang = 'ne';
 const translations = {
-'YOUR MONEY, CLEARER':'तपाईंको पैसाको स्पष्ट हिसाब',
+'तपाईंको पैसाको स्पष्ट हिसाब':'YOUR MONEY, CLEARER',
 'यज्ञ हिसाब':'यज्ञ हिसाब',
-'YagyaHisab — तपाईंको दैनिक वित्तीय हिसाब, अब सजिलो नेपालीमा। ऋण, ब्याज, SIP र प्रतिशतको हिसाब एउटै ठाउँमा.':'YagyaHisab — your everyday money calculations, made simple. Loans, interest, SIP and percentages in one place.',
+'YagyaHisab — तपाईंको दैनिक वित्तीय हिसाब, अब सजिलो नेपालीमा। ऋण, ब्याज, SIP र प्रतिशतको हिसाब एउटै ठाउँमा।':'YagyaHisab — your everyday money calculations, made simple. Loans, interest, SIP and percentages in one place.',
 'अफलाइन प्रयोगका लागि तयार':'Ready for offline use',
 '＋ मोबाइलमा इन्स्टल गर्नुहोस्':'＋ Install on phone',
 'कुन हिसाब गर्ने?':'What would you like to calculate?',
@@ -127,8 +127,8 @@ try { const savedLanguage = localStorage.getItem('yagyahisab-language'); if (sav
 const $=id=>document.getElementById(id),v=id=>Number($(id).value),n=id=>Math.max(0,v(id));
 const money=x=>Number.isFinite(x)?(appLang==='ne'?'रु. ':'NPR ')+x.toLocaleString(appLang==='ne'?'ne-NP':'en-IN',{maximumFractionDigits:2}):'—';
 const pct=x=>Number.isFinite(x)?x.toLocaleString(appLang==='ne'?'ne-NP':'en-IN',{maximumFractionDigits:2})+'%':(appLang==='ne'?'हिसाब सम्भव छैन':'Cannot calculate');
-function show(id,title,big,items){$(id).innerHTML='<div class="result-label">'+title+'</div><div class="big">'+big+'</div><div class="stats">'+items.map(a=>'<div class="stat"><span>'+a[0]+'</span><strong>'+a[1]+'</strong></div>').join('')+'</div>'}
-function error(id,msg){$(id).innerHTML='<div class="result-label">कृपया जाँच गर्नुहोस्</div><div style="padding-top:10px;color:#8b3d32;font-size:14px">'+msg+'</div>'}
+function show(id,title,big,items){$(id).innerHTML='<div class="result-label">'+title+'</div><div class="big">'+big+'</div><div class="stats">'+items.map(a=>'<div class="stat"><span>'+a[0]+'</span><strong>'+a[1]+'</strong></div>').join('')+'</div>';applyLanguage(appLang)}
+function error(id,msg){$(id).innerHTML='<div class="result-label">कृपया जाँच गर्नुहोस्</div><div style="padding-top:10px;color:#8b3d32;font-size:14px">'+msg+'</div>';applyLanguage(appLang)}
 document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-tab]').forEach(x=>{let on=x===b;x.classList.toggle('active',on);x.setAttribute('aria-selected',String(on))});document.querySelectorAll('.panel').forEach(x=>x.classList.toggle('active',x.id===b.dataset.tab))}));
 function calcLoan(){let p=n('loanAmount'),annual=n('loanRate'),r=annual/1200,months=Math.round(n('loanYears')*12),fees=n('loanFees');if(!months||p<=0){error('loanResult','ऋण रकम र अवधि शून्यभन्दा बढी राख्नुहोस्।');return}let emi=r===0?p/months:p*r/(1-Math.pow(1+r,-months)),total=emi*months;show('loanResult','अनुमानित मासिक किस्ता',money(emi),[['कुल किस्ता भुक्तानी',money(total)],['कुल ब्याज',money(total-p)],['शुल्कसहित अनुमानित लागत',money(total+fees)]])}
 function calcInterest(){let p=n('intPrincipal'),r=n('intRate')/100,t=n('intYears'),m=v('intFrequency');if(!Number.isFinite(m)||m<=0){error('interestResult','ब्याज आवृत्ति छान्नुहोस्।');return}let simple=p*(1+r*t),compound=r===0?p:p*Math.pow(1+r/m,m*t);show('interestResult','साधारण ब्याज',money(simple-p),[['साधारण ब्याजसहित कुल',money(simple)],['चक्रवृद्धि ब्याज',money(compound-p)],['चक्रवृद्धिसहित कुल',money(compound)]])}
@@ -143,7 +143,7 @@ calcLoan();calcInterest();calcSIP();calcPercent();
 if(appLang==='en') { applyLanguage('ne'); applyLanguage('en'); }
 const installBtn=$('installBtn');let installPrompt=null;
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;installBtn.hidden=false});
-installBtn.addEventListener('click',async()=>{if(!installPrompt){alert('Chrome को मेनु (⋮) खोल्नुहोस् र “Install app” वा “Add to Home screen” छान्नुहोस्।');return}installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;installBtn.hidden=true});
+installBtn.addEventListener('click',async()=>{if(!installPrompt){alert(appLang==='ne'?'Chrome को मेनु (⋮) खोल्नुहोस् र “Install app” वा “Add to Home screen” छान्नुहोस्।':'Open the Chrome menu (⋮) and choose “Install app” or “Add to Home screen”.');return}installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;installBtn.hidden=true});
 window.addEventListener('appinstalled',()=>{installBtn.hidden=true;installBtn.textContent=appLang==='ne'?'✓ इन्स्टल भयो':'✓ Installed'});
 function netStatus(){let online=navigator.onLine;$('networkStatus').textContent=online?(appLang==='ne'?'अफलाइन प्रयोगका लागि तयार':'Ready for offline use'):(appLang==='ne'?'अहिले अफलाइन — एप प्रयोग गर्न सक्नुहुन्छ':'Offline now — you can keep using the app');$('statusDot').style.background=online?'#a9e6b8':'#e8c778'}
 window.addEventListener('online',netStatus);window.addEventListener('offline',netStatus);netStatus();
