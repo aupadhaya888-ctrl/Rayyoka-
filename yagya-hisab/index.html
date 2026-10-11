@@ -116,6 +116,8 @@ function applyLanguage(next) {
     if (translated !== trimmed) node.nodeValue = raw.replace(trimmed, translated);
   }
   $('langBtn').textContent = next === 'ne' ? 'English' : 'नेपाली';
+  const installControl = $('installBtn');
+  if (installControl && !installControl.hidden) installControl.textContent = next === 'ne' ? '＋ मोबाइलमा इन्स्टल गर्नुहोस्' : '＋ Install on phone';
   $('networkStatus').textContent = navigator.onLine
     ? (next === 'ne' ? 'अफलाइन प्रयोगका लागि तयार' : 'Ready for offline use')
     : (next === 'ne' ? 'अहिले अफलाइन — एप प्रयोग गर्न सक्नुहुन्छ' : 'Offline now — you can keep using the app');
@@ -147,6 +149,6 @@ installBtn.addEventListener('click',async()=>{if(!installPrompt){alert(appLang==
 window.addEventListener('appinstalled',()=>{installBtn.hidden=true;installBtn.textContent=appLang==='ne'?'✓ इन्स्टल भयो':'✓ Installed'});
 function netStatus(){let online=navigator.onLine;$('networkStatus').textContent=online?(appLang==='ne'?'अफलाइन प्रयोगका लागि तयार':'Ready for offline use'):(appLang==='ne'?'अहिले अफलाइन — एप प्रयोग गर्न सक्नुहुन्छ':'Offline now — you can keep using the app');$('statusDot').style.background=online?'#a9e6b8':'#e8c778'}
 window.addEventListener('online',netStatus);window.addEventListener('offline',netStatus);netStatus();
-if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{$('networkStatus').textContent=appLang==='ne'?'अफलाइन सुविधा सेटअप हुन सकेन':'Could not set up offline support'}));
+if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').then(()=>navigator.serviceWorker.ready).then(()=>{$('networkStatus').textContent=navigator.onLine?(appLang==='ne'?'अफलाइन सुविधा तयार':'Offline support ready'):(appLang==='ne'?'अफलाइन मोड':'Offline mode');}).catch(()=>{$('networkStatus').textContent=appLang==='ne'?'अफलाइन सुविधा सेटअप हुन सकेन':'Could not set up offline support'}));
 </script>
 </body></html>
