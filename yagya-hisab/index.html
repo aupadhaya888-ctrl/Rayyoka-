@@ -123,10 +123,11 @@ function applyLanguage(next) {
     : (next === 'ne' ? 'अहिले अफलाइन — एप प्रयोग गर्न सक्नुहुन्छ' : 'Offline now — you can keep using the app');
   try { localStorage.setItem('yagyahisab-language', next); } catch(e) {}
 }
+const $=id=>document.getElementById(id),v=id=>Number($(id).value),n=id=>Math.max(0,v(id));
 $('langBtn').addEventListener('click',()=>{applyLanguage(appLang === 'ne' ? 'en' : 'ne');calcLoan();calcInterest();calcSIP();calcPercent()});
 try { const savedLanguage = localStorage.getItem('yagyahisab-language'); if (savedLanguage === 'en') appLang = 'en'; } catch(e) {}
 
-const $=id=>document.getElementById(id),v=id=>Number($(id).value),n=id=>Math.max(0,v(id));
+
 const money=x=>Number.isFinite(x)?(appLang==='ne'?'रु. ':'NPR ')+x.toLocaleString(appLang==='ne'?'ne-NP':'en-IN',{maximumFractionDigits:2}):'—';
 const pct=x=>Number.isFinite(x)?x.toLocaleString(appLang==='ne'?'ne-NP':'en-IN',{maximumFractionDigits:2})+'%':(appLang==='ne'?'हिसाब सम्भव छैन':'Cannot calculate');
 function show(id,title,big,items){$(id).innerHTML='<div class="result-label">'+title+'</div><div class="big">'+big+'</div><div class="stats">'+items.map(a=>'<div class="stat"><span>'+a[0]+'</span><strong>'+a[1]+'</strong></div>').join('')+'</div>';applyLanguage(appLang)}
